@@ -1,0 +1,2191 @@
+@prefix : <http://example.org/Facebook#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix Facebook: <http://example.org/Facebook#> .
+@base <http://example.org/Facebook> .
+
+<http://example.org/Facebook> rdf:type owl:Ontology ;
+                               owl:versionInfo "Created with TopBraid Composer" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://example.org/Facebook#Comment_Contains_Tag
+Facebook:Comment_Contains_Tag rdf:type owl:AnnotationProperty ;
+                              rdfs:range Facebook:Tag .
+
+
+###  http://example.org/Facebook#Content_Created_Date
+Facebook:Content_Created_Date rdf:type owl:AnnotationProperty ;
+                              rdfs:range xsd:date ;
+                              rdfs:domain Facebook:Publication .
+
+
+###  http://example.org/Facebook#Content_Visibility
+Facebook:Content_Visibility rdf:type owl:AnnotationProperty ;
+                            rdfs:range Facebook:Visibility .
+
+
+###  http://example.org/Facebook#Entity_Cover
+Facebook:Entity_Cover rdf:type owl:AnnotationProperty ;
+                      rdfs:range Facebook:Image .
+
+
+###  http://example.org/Facebook#Entity_Location
+Facebook:Entity_Location rdf:type owl:AnnotationProperty ;
+                         rdfs:domain Facebook:Entity .
+
+
+###  http://example.org/Facebook#Event_Cover_Art
+Facebook:Event_Cover_Art rdf:type owl:AnnotationProperty ;
+                         rdfs:range Facebook:Image .
+
+
+###  http://example.org/Facebook#Event_Name
+Facebook:Event_Name rdf:type owl:AnnotationProperty ;
+                    rdfs:range xsd:string ;
+                    rdfs:domain Facebook:Event .
+
+
+###  http://example.org/Facebook#Group_Admin
+Facebook:Group_Admin rdf:type owl:AnnotationProperty ;
+                     rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#Group_Background_Cover
+Facebook:Group_Background_Cover rdf:type owl:AnnotationProperty ;
+                                rdfs:range Facebook:Image .
+
+
+###  http://example.org/Facebook#Group_Created_By
+Facebook:Group_Created_By rdf:type owl:AnnotationProperty ;
+                          rdfs:range Facebook:User .
+
+
+###  http://example.org/Facebook#Group_Creation_Date
+Facebook:Group_Creation_Date rdf:type owl:AnnotationProperty ;
+                             rdfs:range xsd:date ;
+                             rdfs:domain Facebook:Group .
+
+
+###  http://example.org/Facebook#Group_Moderator
+Facebook:Group_Moderator rdf:type owl:AnnotationProperty ;
+                         rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#Group_Name
+Facebook:Group_Name rdf:type owl:AnnotationProperty ;
+                    rdfs:range xsd:string ;
+                    rdfs:domain Facebook:Group .
+
+
+###  http://example.org/Facebook#Group_Role
+Facebook:Group_Role rdf:type owl:AnnotationProperty ;
+                    rdfs:subPropertyOf Facebook:Roles ;
+                    rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#Group_Visibility
+Facebook:Group_Visibility rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/Facebook#Media_Contains_Tag
+Facebook:Media_Contains_Tag rdf:type owl:AnnotationProperty ;
+                            rdfs:range Facebook:Tag .
+
+
+###  http://example.org/Facebook#Page_Admin
+Facebook:Page_Admin rdf:type owl:AnnotationProperty ;
+                    rdfs:range Facebook:User .
+
+
+###  http://example.org/Facebook#Page_Analyst
+Facebook:Page_Analyst rdf:type owl:AnnotationProperty ;
+                      rdfs:range Facebook:User .
+
+
+###  http://example.org/Facebook#Page_Creation_Date
+Facebook:Page_Creation_Date rdf:type owl:AnnotationProperty ;
+                            rdfs:range xsd:date ;
+                            rdfs:domain Facebook:Page .
+
+
+###  http://example.org/Facebook#Page_Likes
+Facebook:Page_Likes rdf:type owl:AnnotationProperty ;
+                    rdfs:range Facebook:Page .
+
+
+###  http://example.org/Facebook#Page_Moderator
+Facebook:Page_Moderator rdf:type owl:AnnotationProperty ;
+                        rdfs:range Facebook:User .
+
+
+###  http://example.org/Facebook#Page_Name
+Facebook:Page_Name rdf:type owl:AnnotationProperty ;
+                   rdfs:range xsd:string ;
+                   rdfs:domain Facebook:Page .
+
+
+###  http://example.org/Facebook#Page_Role
+Facebook:Page_Role rdf:type owl:AnnotationProperty ;
+                   rdfs:subPropertyOf Facebook:Roles ;
+                   rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#Post_Contains_Tag
+Facebook:Post_Contains_Tag rdf:type owl:AnnotationProperty ;
+                           rdfs:range Facebook:Tag .
+
+
+###  http://example.org/Facebook#Product_Creation_Date
+Facebook:Product_Creation_Date rdf:type owl:AnnotationProperty ;
+                               rdfs:range xsd:date ;
+                               rdfs:domain Facebook:Product .
+
+
+###  http://example.org/Facebook#Product_Description
+Facebook:Product_Description rdf:type owl:AnnotationProperty ;
+                             rdfs:range xsd:string ;
+                             rdfs:domain Facebook:Product .
+
+
+###  http://example.org/Facebook#Product_Name
+Facebook:Product_Name rdf:type owl:AnnotationProperty ;
+                      rdfs:range xsd:string ;
+                      rdfs:domain Facebook:Product .
+
+
+###  http://example.org/Facebook#Publication_Body
+Facebook:Publication_Body rdf:type owl:AnnotationProperty ;
+                          rdfs:range xsd:string ;
+                          rdfs:domain Facebook:Publication .
+
+
+###  http://example.org/Facebook#Publication_Created_By
+Facebook:Publication_Created_By rdf:type owl:AnnotationProperty ;
+                                rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#Publication_Likes
+Facebook:Publication_Likes rdf:type owl:AnnotationProperty ;
+                           rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#Reviews
+Facebook:Reviews rdf:type owl:AnnotationProperty ;
+                 rdfs:domain Facebook:Review .
+
+
+###  http://example.org/Facebook#Reviews_Page
+Facebook:Reviews_Page rdf:type owl:AnnotationProperty ;
+                      rdfs:subPropertyOf Facebook:Reviews ;
+                      rdfs:range Facebook:Page .
+
+
+###  http://example.org/Facebook#Reviews_Seller
+Facebook:Reviews_Seller rdf:type owl:AnnotationProperty ;
+                        rdfs:subPropertyOf Facebook:Reviews ;
+                        rdfs:range Facebook:Seller .
+
+
+###  http://example.org/Facebook#Roles
+Facebook:Roles rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/Facebook#Buys
+Facebook:Buys rdf:type owl:ObjectProperty ;
+              owl:inverseOf Facebook:Ιs_Βought ;
+              rdfs:domain Facebook:User ;
+              rdfs:range Facebook:Product .
+
+
+###  http://example.org/Facebook#Comment_By
+Facebook:Comment_By rdf:type owl:ObjectProperty ;
+                    owl:inverseOf Facebook:Comments ;
+                    rdfs:domain Facebook:Comment ;
+                    rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#Comment_Contains_Tag
+Facebook:Comment_Contains_Tag rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf Facebook:Contains_Tag ;
+                              rdfs:domain Facebook:Comment .
+
+
+###  http://example.org/Facebook#Comments
+Facebook:Comments rdf:type owl:ObjectProperty ;
+                  rdfs:domain Facebook:Entity ;
+                  rdfs:range Facebook:Comment .
+
+
+###  http://example.org/Facebook#Contains_Tag
+Facebook:Contains_Tag rdf:type owl:ObjectProperty ;
+                      rdfs:range Facebook:Tag .
+
+
+###  http://example.org/Facebook#Content_Visibility
+Facebook:Content_Visibility rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf Facebook:Visible ;
+                            rdfs:domain Facebook:Publication .
+
+
+###  http://example.org/Facebook#Cover
+Facebook:Cover rdf:type owl:ObjectProperty ;
+               rdfs:range Facebook:Image .
+
+
+###  http://example.org/Facebook#Created_by
+Facebook:Created_by rdf:type owl:ObjectProperty ;
+                    rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#Entity_Cover
+Facebook:Entity_Cover rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf Facebook:Cover ;
+                      rdfs:domain Facebook:Entity .
+
+
+###  http://example.org/Facebook#Entity_Created_Publication
+Facebook:Entity_Created_Publication rdf:type owl:ObjectProperty ;
+                                    owl:inverseOf Facebook:Publication_Created_By .
+
+
+###  http://example.org/Facebook#Entity_is_member
+Facebook:Entity_is_member rdf:type owl:ObjectProperty ;
+                          owl:inverseOf Facebook:Members ;
+                          rdfs:domain Facebook:Entity ;
+                          rdfs:range Facebook:Group .
+
+
+###  http://example.org/Facebook#Event_Cover_Art
+Facebook:Event_Cover_Art rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf Facebook:Cover ;
+                         rdfs:domain Facebook:Event .
+
+
+###  http://example.org/Facebook#Event_Visibility
+Facebook:Event_Visibility rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf Facebook:Content_Visibility ;
+                          rdfs:domain Facebook:Event .
+
+
+###  http://example.org/Facebook#Follow
+Facebook:Follow rdf:type owl:ObjectProperty ;
+                rdfs:domain Facebook:Entity ;
+                rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#Friend
+Facebook:Friend rdf:type owl:ObjectProperty ,
+                         owl:SymmetricProperty ;
+                rdfs:domain Facebook:User ;
+                rdfs:range Facebook:User .
+
+
+###  http://example.org/Facebook#Group_Admin
+Facebook:Group_Admin rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf Facebook:Group_Role ;
+                     rdf:type owl:SymmetricProperty ;
+                     rdfs:domain Facebook:Group .
+
+
+###  http://example.org/Facebook#Group_Background_Cover
+Facebook:Group_Background_Cover rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf Facebook:Cover ;
+                                rdfs:domain Facebook:Group .
+
+
+###  http://example.org/Facebook#Group_Created_By
+Facebook:Group_Created_By rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf Facebook:Created_by ;
+                          rdfs:domain Facebook:Group .
+
+
+###  http://example.org/Facebook#Group_Has_More_members
+Facebook:Group_Has_More_members rdf:type owl:ObjectProperty ,
+                                         owl:TransitiveProperty ;
+                                rdfs:domain Facebook:Group ;
+                                rdfs:range Facebook:Group .
+
+
+###  http://example.org/Facebook#Group_Moderator
+Facebook:Group_Moderator rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf Facebook:Group_Role ;
+                         rdf:type owl:SymmetricProperty ;
+                         rdfs:domain Facebook:Group .
+
+
+###  http://example.org/Facebook#Group_Role
+Facebook:Group_Role rdf:type owl:ObjectProperty ;
+                    rdfs:domain Facebook:User .
+
+
+###  http://example.org/Facebook#Group_Visibility
+Facebook:Group_Visibility rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf Facebook:Visible ;
+                          rdfs:domain Facebook:Group .
+
+
+###  http://example.org/Facebook#Image_Visibility
+Facebook:Image_Visibility rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf Facebook:Content_Visibility ;
+                          rdfs:domain Facebook:Image .
+
+
+###  http://example.org/Facebook#Interchange
+Facebook:Interchange rdf:type owl:ObjectProperty ;
+                     owl:inverseOf Facebook:Sells ;
+                     rdfs:domain Facebook:Product ;
+                     rdfs:range Facebook:Seller .
+
+
+###  http://example.org/Facebook#Likes
+Facebook:Likes rdf:type owl:ObjectProperty ;
+               rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#Marketplace_Product
+Facebook:Marketplace_Product rdf:type owl:ObjectProperty ,
+                                      owl:FunctionalProperty ;
+                             rdfs:domain Facebook:Product ;
+                             rdfs:range Facebook:Marketplace .
+
+
+###  http://example.org/Facebook#Media_Contains_Tag
+Facebook:Media_Contains_Tag rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf Facebook:Contains_Tag ;
+                            rdfs:domain Facebook:Media .
+
+
+###  http://example.org/Facebook#Members
+Facebook:Members rdf:type owl:ObjectProperty ;
+                 rdfs:domain Facebook:Group ;
+                 rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#PFP
+Facebook:PFP rdf:type owl:ObjectProperty ;
+             rdfs:domain Facebook:Entity ;
+             rdfs:range Facebook:Image .
+
+
+###  http://example.org/Facebook#Page_Admin
+Facebook:Page_Admin rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf Facebook:Page_Role ;
+                    rdf:type owl:SymmetricProperty ;
+                    rdfs:domain Facebook:Page .
+
+
+###  http://example.org/Facebook#Page_Advertiser
+Facebook:Page_Advertiser rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf Facebook:Page_Role ;
+                         rdf:type owl:SymmetricProperty .
+
+
+###  http://example.org/Facebook#Page_Analyst
+Facebook:Page_Analyst rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf Facebook:Page_Role ;
+                      rdf:type owl:SymmetricProperty ;
+                      rdfs:domain Facebook:Page .
+
+
+###  http://example.org/Facebook#Page_Editor
+Facebook:Page_Editor rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf Facebook:Page_Role ;
+                     rdf:type owl:SymmetricProperty .
+
+
+###  http://example.org/Facebook#Page_Is_Older
+Facebook:Page_Is_Older rdf:type owl:ObjectProperty ,
+                                owl:TransitiveProperty ;
+                       rdfs:domain Facebook:Page ;
+                       rdfs:range Facebook:Page .
+
+
+###  http://example.org/Facebook#Page_Likes
+Facebook:Page_Likes rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf Facebook:Likes ;
+                    rdfs:domain Facebook:Page ,
+                                Facebook:User .
+
+
+###  http://example.org/Facebook#Page_Moderator
+Facebook:Page_Moderator rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf Facebook:Page_Role ;
+                        rdf:type owl:SymmetricProperty ;
+                        rdfs:domain Facebook:Page .
+
+
+###  http://example.org/Facebook#Page_Role
+Facebook:Page_Role rdf:type owl:ObjectProperty ;
+                   rdfs:domain Facebook:Page ,
+                               Facebook:User .
+
+
+###  http://example.org/Facebook#Post_Contains_Tag
+Facebook:Post_Contains_Tag rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf Facebook:Contains_Tag ;
+                           rdfs:domain Facebook:Post .
+
+
+###  http://example.org/Facebook#Post_Visibility
+Facebook:Post_Visibility rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf Facebook:Content_Visibility ;
+                         rdfs:domain Facebook:Post .
+
+
+###  http://example.org/Facebook#Product_Category
+Facebook:Product_Category rdf:type owl:ObjectProperty ;
+                          rdfs:domain Facebook:Product ;
+                          rdfs:range Facebook:Category .
+
+
+###  http://example.org/Facebook#Product_Images
+Facebook:Product_Images rdf:type owl:ObjectProperty ;
+                        rdfs:domain Facebook:Product ;
+                        rdfs:range Facebook:Image .
+
+
+###  http://example.org/Facebook#Product_Is_Cheaper_Than
+Facebook:Product_Is_Cheaper_Than rdf:type owl:ObjectProperty ;
+                                 rdfs:domain Facebook:Product ;
+                                 rdfs:range Facebook:Product .
+
+
+###  http://example.org/Facebook#Publication_Created_By
+Facebook:Publication_Created_By rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf Facebook:Created_by ;
+                                rdfs:domain Facebook:Publication .
+
+
+###  http://example.org/Facebook#Publication_Likes
+Facebook:Publication_Likes rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf Facebook:Likes ;
+                           rdfs:domain Facebook:Publication .
+
+
+###  http://example.org/Facebook#Reply
+Facebook:Reply rdf:type owl:ObjectProperty ;
+               rdfs:domain Facebook:Comment ;
+               rdfs:range Facebook:Comment .
+
+
+###  http://example.org/Facebook#Reviews_Page
+Facebook:Reviews_Page rdf:type owl:ObjectProperty ;
+                      rdfs:domain Facebook:Entity .
+
+
+###  http://example.org/Facebook#Reviews_Seller
+Facebook:Reviews_Seller rdf:type owl:ObjectProperty ;
+                        rdfs:domain Facebook:Entity .
+
+
+###  http://example.org/Facebook#Sells
+Facebook:Sells rdf:type owl:ObjectProperty ;
+               rdfs:domain Facebook:Seller ;
+               rdfs:range Facebook:Product .
+
+
+###  http://example.org/Facebook#Tag_By_Entity
+Facebook:Tag_By_Entity rdf:type owl:ObjectProperty ;
+                       rdfs:domain Facebook:Tag ;
+                       rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#Tagging
+Facebook:Tagging rdf:type owl:ObjectProperty ;
+                 rdfs:domain Facebook:Tag ;
+                 rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#User_Created_Page
+Facebook:User_Created_Page rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf Facebook:Created_by ;
+                           rdfs:domain Facebook:User ;
+                           rdfs:range Facebook:Page .
+
+
+###  http://example.org/Facebook#User_Has_More_Friends
+Facebook:User_Has_More_Friends rdf:type owl:ObjectProperty ;
+                               rdfs:domain Facebook:User ;
+                               rdfs:range Facebook:User .
+
+
+###  http://example.org/Facebook#User_Is_Older
+Facebook:User_Is_Older rdf:type owl:ObjectProperty ,
+                                owl:TransitiveProperty ;
+                       rdfs:domain Facebook:User ;
+                       rdfs:range Facebook:User .
+
+
+###  http://example.org/Facebook#Video_Visibility
+Facebook:Video_Visibility rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf Facebook:Content_Visibility ;
+                          rdfs:domain Facebook:Video .
+
+
+###  http://example.org/Facebook#Visible
+Facebook:Visible rdf:type owl:ObjectProperty ;
+                 rdfs:range Facebook:Visibility .
+
+
+###  http://example.org/Facebook#isEntity
+Facebook:isEntity rdf:type owl:ObjectProperty ;
+                  owl:inverseOf Facebook:isSeller ;
+                  rdfs:domain Facebook:Seller ;
+                  rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#isSeller
+Facebook:isSeller rdf:type owl:ObjectProperty ;
+                  rdfs:domain Facebook:Seller ;
+                  rdfs:range Facebook:Entity .
+
+
+###  http://example.org/Facebook#Ιs_Βought
+Facebook:Ιs_Βought rdf:type owl:ObjectProperty ;
+                   rdfs:domain Facebook:Product ;
+                   rdfs:range Facebook:User .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/Facebook#Birth_Date
+Facebook:Birth_Date rdf:type owl:DatatypeProperty ;
+                    rdfs:domain Facebook:User ;
+                    rdfs:range xsd:date .
+
+
+###  http://example.org/Facebook#Body
+Facebook:Body rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string .
+
+
+###  http://example.org/Facebook#Content_Created_Date
+Facebook:Content_Created_Date rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf Facebook:Creation_Date .
+
+
+###  http://example.org/Facebook#Creation_Date
+Facebook:Creation_Date rdf:type owl:DatatypeProperty ;
+                       rdfs:range xsd:date .
+
+
+###  http://example.org/Facebook#Entity_Location
+Facebook:Entity_Location rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf Facebook:Location .
+
+
+###  http://example.org/Facebook#Event_Date
+Facebook:Event_Date rdf:type owl:DatatypeProperty ;
+                    rdfs:domain Facebook:Event ;
+                    rdfs:range xsd:dateTime .
+
+
+###  http://example.org/Facebook#Event_Name
+Facebook:Event_Name rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf Facebook:Name .
+
+
+###  http://example.org/Facebook#File_Name
+Facebook:File_Name rdf:type owl:DatatypeProperty ;
+                   rdfs:domain Facebook:Media ;
+                   rdfs:range xsd:string .
+
+
+###  http://example.org/Facebook#First_Name
+Facebook:First_Name rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf Facebook:User_Name ;
+                    rdfs:domain Facebook:User ;
+                    rdfs:range xsd:string .
+
+
+###  http://example.org/Facebook#First_Name_Pronunciation
+Facebook:First_Name_Pronunciation rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf Facebook:First_Name ;
+                                  rdfs:range xsd:string .
+
+
+###  http://example.org/Facebook#Group_Creation_Date
+Facebook:Group_Creation_Date rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf Facebook:Creation_Date .
+
+
+###  http://example.org/Facebook#Group_Name
+Facebook:Group_Name rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf Facebook:Name .
+
+
+###  http://example.org/Facebook#Language
+Facebook:Language rdf:type owl:DatatypeProperty ;
+                  rdfs:domain Facebook:User ;
+                  rdfs:range xsd:string .
+
+
+###  http://example.org/Facebook#Last_Name
+Facebook:Last_Name rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf Facebook:User_Name ;
+                   rdfs:domain Facebook:User ;
+                   rdfs:range xsd:string .
+
+
+###  http://example.org/Facebook#Last_Name_Pronunciation
+Facebook:Last_Name_Pronunciation rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf Facebook:Last_Name ;
+                                 rdfs:range xsd:string .
+
+
+###  http://example.org/Facebook#Location
+Facebook:Location rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:string .
+
+
+###  http://example.org/Facebook#Name
+Facebook:Name rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:range xsd:string .
+
+
+###  http://example.org/Facebook#Page_Creation_Date
+Facebook:Page_Creation_Date rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf Facebook:Creation_Date .
+
+
+###  http://example.org/Facebook#Page_Name
+Facebook:Page_Name rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf Facebook:Name .
+
+
+###  http://example.org/Facebook#Price
+Facebook:Price rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain Facebook:Product ;
+               rdfs:range xsd:decimal .
+
+
+###  http://example.org/Facebook#Product_Creation_Date
+Facebook:Product_Creation_Date rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf Facebook:Creation_Date .
+
+
+###  http://example.org/Facebook#Product_Description
+Facebook:Product_Description rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf Facebook:Body .
+
+
+###  http://example.org/Facebook#Product_Name
+Facebook:Product_Name rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf Facebook:Name .
+
+
+###  http://example.org/Facebook#Pronoun
+Facebook:Pronoun rdf:type owl:DatatypeProperty ;
+                 rdfs:domain Facebook:User ;
+                 rdfs:range xsd:string .
+
+
+###  http://example.org/Facebook#Publication_Body
+Facebook:Publication_Body rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf Facebook:Body .
+
+
+###  http://example.org/Facebook#Publication_Location
+Facebook:Publication_Location rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf Facebook:Location .
+
+
+###  http://example.org/Facebook#User_Name
+Facebook:User_Name rdf:type owl:DatatypeProperty ;
+                   rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/Facebook#Bronze_Rank
+Facebook:Bronze_Rank rdf:type owl:Class ;
+                     rdfs:subClassOf Facebook:Entity_Rank ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty Facebook:Entity_Created_Publication ;
+                                       owl:minQualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                                       owl:onClass Facebook:Publication
+                                     ] .
+
+
+###  http://example.org/Facebook#Category
+Facebook:Category rdf:type owl:Class ;
+                  rdfs:subClassOf rdfs:Resource ;
+                  owl:disjointWith Facebook:Marketplace .
+
+
+###  http://example.org/Facebook#Clothing
+Facebook:Clothing rdf:type owl:Class ;
+                  rdfs:subClassOf Facebook:Category ;
+                  owl:disjointWith Facebook:Electronics .
+
+
+###  http://example.org/Facebook#Comment
+Facebook:Comment rdf:type owl:Class ;
+                 rdfs:subClassOf Facebook:Publication .
+
+
+###  http://example.org/Facebook#Dress
+Facebook:Dress rdf:type owl:Class ;
+               rdfs:subClassOf Facebook:Clothing .
+
+
+###  http://example.org/Facebook#Electronics
+Facebook:Electronics rdf:type owl:Class ;
+                     rdfs:subClassOf Facebook:Category .
+
+
+###  http://example.org/Facebook#Entity
+Facebook:Entity rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( Facebook:Page
+                                                    Facebook:User
+                                                  )
+                                    ] ;
+                rdfs:subClassOf rdfs:Resource ;
+                owl:disjointWith Facebook:Group .
+
+
+###  http://example.org/Facebook#Entity_Rank
+Facebook:Entity_Rank rdf:type owl:Class ;
+                     rdfs:subClassOf rdfs:Resource .
+
+
+###  http://example.org/Facebook#Event
+Facebook:Event rdf:type owl:Class ;
+               rdfs:subClassOf Facebook:Publication .
+
+
+###  http://example.org/Facebook#Gold_Rank
+Facebook:Gold_Rank rdf:type owl:Class ;
+                   rdfs:subClassOf Facebook:Entity_Rank ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty Facebook:Entity_Created_Publication ;
+                                     owl:minQualifiedCardinality "10"^^xsd:nonNegativeInteger ;
+                                     owl:onClass Facebook:Publication
+                                   ] .
+
+
+###  http://example.org/Facebook#Group
+Facebook:Group rdf:type owl:Class ;
+               rdfs:subClassOf rdfs:Resource .
+
+
+###  http://example.org/Facebook#Hoodies
+Facebook:Hoodies rdf:type owl:Class ;
+                 rdfs:subClassOf Facebook:Clothing .
+
+
+###  http://example.org/Facebook#Image
+Facebook:Image rdf:type owl:Class ;
+               rdfs:subClassOf Facebook:Media .
+
+
+###  http://example.org/Facebook#Inactive_Page
+Facebook:Inactive_Page rdf:type owl:Class ;
+                       rdfs:subClassOf Facebook:Page ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty Facebook:Publication_Created_By ;
+                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass Facebook:Page
+                                       ] .
+
+
+###  http://example.org/Facebook#Laptop
+Facebook:Laptop rdf:type owl:Class ;
+                rdfs:subClassOf Facebook:Electronics .
+
+
+###  http://example.org/Facebook#Marketplace
+Facebook:Marketplace rdf:type owl:Class ;
+                     rdfs:subClassOf rdfs:Resource .
+
+
+###  http://example.org/Facebook#Media
+Facebook:Media rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Class ;
+                                     owl:unionOf ( Facebook:Image
+                                                   Facebook:Video
+                                                 )
+                                   ] ;
+               rdfs:subClassOf Facebook:Publication .
+
+
+###  http://example.org/Facebook#Not_Tagged_Comment
+Facebook:Not_Tagged_Comment rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( Facebook:Comment
+                                                                       [ rdf:type owl:Class ;
+                                                                         owl:complementOf Facebook:Tagged_Comment
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] ;
+                            rdfs:subClassOf Facebook:Comment .
+
+
+###  http://example.org/Facebook#Not_Tagged_Media
+Facebook:Not_Tagged_Media rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( Facebook:Media
+                                                                     [ rdf:type owl:Class ;
+                                                                       owl:complementOf Facebook:Tagged_Media
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] ;
+                          rdfs:subClassOf Facebook:Media .
+
+
+###  http://example.org/Facebook#Not_Tagged_Post
+Facebook:Not_Tagged_Post rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( Facebook:Post
+                                                                    [ rdf:type owl:Class ;
+                                                                      owl:complementOf Facebook:Tagged_Post
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf Facebook:Post .
+
+
+###  http://example.org/Facebook#Page
+Facebook:Page rdf:type owl:Class ;
+              rdfs:subClassOf Facebook:Entity .
+
+
+###  http://example.org/Facebook#Page_Admin
+Facebook:Page_Admin rdf:type owl:Class ;
+                    rdfs:subClassOf Facebook:Entity ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty Facebook:Page_Admin ;
+                                      owl:someValuesFrom Facebook:Page
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty Facebook:Page_Admin ;
+                                      owl:someValuesFrom Facebook:User
+                                    ] .
+
+
+###  http://example.org/Facebook#Page_Analyst
+Facebook:Page_Analyst rdf:type owl:Class ;
+                      rdfs:subClassOf Facebook:Entity ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty Facebook:Page_Analyst ;
+                                        owl:someValuesFrom Facebook:Page
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty Facebook:Page_Analyst ;
+                                        owl:someValuesFrom Facebook:User
+                                      ] .
+
+
+###  http://example.org/Facebook#Page_Managers
+Facebook:Page_Managers rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( Facebook:Page_Admin
+                                                                  Facebook:Page_Moderator
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf rdfs:Resource .
+
+
+###  http://example.org/Facebook#Page_Moderator
+Facebook:Page_Moderator rdf:type owl:Class ;
+                        rdfs:subClassOf Facebook:Entity ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty Facebook:Page_Moderator ;
+                                          owl:someValuesFrom Facebook:Page
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty Facebook:Page_Moderator ;
+                                          owl:someValuesFrom Facebook:User
+                                        ] .
+
+
+###  http://example.org/Facebook#Phone
+Facebook:Phone rdf:type owl:Class ;
+               rdfs:subClassOf Facebook:Electronics .
+
+
+###  http://example.org/Facebook#Popular_Group
+Facebook:Popular_Group rdf:type owl:Class ;
+                       rdfs:subClassOf Facebook:Group ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty Facebook:Members ;
+                                         owl:minQualifiedCardinality "20"^^xsd:nonNegativeInteger ;
+                                         owl:onClass Facebook:Entity
+                                       ] .
+
+
+###  http://example.org/Facebook#Post
+Facebook:Post rdf:type owl:Class ;
+              rdfs:subClassOf Facebook:Publication .
+
+
+###  http://example.org/Facebook#Private
+Facebook:Private rdf:type owl:Class ;
+                 rdfs:subClassOf Facebook:Visibility ;
+                 owl:disjointWith Facebook:Public .
+
+
+###  http://example.org/Facebook#Private_Event
+Facebook:Private_Event rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty Facebook:Event_Visibility ;
+                                             owl:someValuesFrom Facebook:Private
+                                           ] ;
+                       rdfs:subClassOf Facebook:Event .
+
+
+###  http://example.org/Facebook#Private_Group
+Facebook:Private_Group rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty Facebook:Group_Visibility ;
+                                             owl:someValuesFrom Facebook:Private
+                                           ] ;
+                       rdfs:subClassOf Facebook:Group .
+
+
+###  http://example.org/Facebook#Private_Image
+Facebook:Private_Image rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty Facebook:Image_Visibility ;
+                                             owl:someValuesFrom Facebook:Private
+                                           ] ;
+                       rdfs:subClassOf Facebook:Image .
+
+
+###  http://example.org/Facebook#Private_Post
+Facebook:Private_Post rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty Facebook:Post_Visibility ;
+                                            owl:someValuesFrom Facebook:Private
+                                          ] ;
+                      rdfs:subClassOf Facebook:Post .
+
+
+###  http://example.org/Facebook#Private_Video
+Facebook:Private_Video rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty Facebook:Video_Visibility ;
+                                             owl:someValuesFrom Facebook:Private
+                                           ] ;
+                       rdfs:subClassOf Facebook:Video .
+
+
+###  http://example.org/Facebook#Product
+Facebook:Product rdf:type owl:Class ;
+                 rdfs:subClassOf rdfs:Resource .
+
+
+###  http://example.org/Facebook#Public
+Facebook:Public rdf:type owl:Class ;
+                rdfs:subClassOf Facebook:Visibility .
+
+
+###  http://example.org/Facebook#Public_Event
+Facebook:Public_Event rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty Facebook:Event_Visibility ;
+                                            owl:someValuesFrom Facebook:Public
+                                          ] ;
+                      rdfs:subClassOf Facebook:Event .
+
+
+###  http://example.org/Facebook#Public_Group
+Facebook:Public_Group rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty Facebook:Group_Visibility ;
+                                            owl:someValuesFrom Facebook:Public
+                                          ] ;
+                      rdfs:subClassOf Facebook:Group .
+
+
+###  http://example.org/Facebook#Public_Image
+Facebook:Public_Image rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty Facebook:Image_Visibility ;
+                                            owl:someValuesFrom Facebook:Public
+                                          ] ;
+                      rdfs:subClassOf Facebook:Image .
+
+
+###  http://example.org/Facebook#Public_Post
+Facebook:Public_Post rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty Facebook:Post_Visibility ;
+                                           owl:someValuesFrom Facebook:Public
+                                         ] ;
+                     rdfs:subClassOf Facebook:Post .
+
+
+###  http://example.org/Facebook#Public_Video
+Facebook:Public_Video rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty Facebook:Video_Visibility ;
+                                            owl:someValuesFrom Facebook:Public
+                                          ] ;
+                      rdfs:subClassOf Facebook:Video .
+
+
+###  http://example.org/Facebook#Publication
+Facebook:Publication rdf:type owl:Class ;
+                     rdfs:subClassOf rdfs:Resource .
+
+
+###  http://example.org/Facebook#Purchased_Products
+Facebook:Purchased_Products rdf:type owl:Class ;
+                            rdfs:subClassOf Facebook:Product ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty Facebook:Buys ;
+                                              owl:someValuesFrom Facebook:Product
+                                            ] .
+
+
+###  http://example.org/Facebook#Review
+Facebook:Review rdf:type owl:Class ;
+                rdfs:subClassOf Facebook:Publication .
+
+
+###  http://example.org/Facebook#Seller
+Facebook:Seller rdf:type owl:Class ;
+                rdfs:subClassOf rdfs:Resource .
+
+
+###  http://example.org/Facebook#Shoes
+Facebook:Shoes rdf:type owl:Class ;
+               rdfs:subClassOf Facebook:Clothing .
+
+
+###  http://example.org/Facebook#Silver_Rank
+Facebook:Silver_Rank rdf:type owl:Class ;
+                     rdfs:subClassOf Facebook:Entity_Rank ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty Facebook:Entity_Created_Publication ;
+                                       owl:minQualifiedCardinality "7"^^xsd:nonNegativeInteger ;
+                                       owl:onClass Facebook:Publication
+                                     ] .
+
+
+###  http://example.org/Facebook#Smartwatch
+Facebook:Smartwatch rdf:type owl:Class ;
+                    rdfs:subClassOf Facebook:Electronics .
+
+
+###  http://example.org/Facebook#Suspicious_User
+Facebook:Suspicious_User rdf:type owl:Class ;
+                         rdfs:subClassOf Facebook:User ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty Facebook:Friend ;
+                                           owl:qualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                           owl:onClass Facebook:User
+                                         ] .
+
+
+###  http://example.org/Facebook#Tag
+Facebook:Tag rdf:type owl:Class ;
+             rdfs:subClassOf rdfs:Resource .
+
+
+###  http://example.org/Facebook#Tagged_Comment
+Facebook:Tagged_Comment rdf:type owl:Class ;
+                        rdfs:subClassOf Facebook:Comment ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty Facebook:Comment_Contains_Tag ;
+                                          owl:someValuesFrom Facebook:Tag
+                                        ] .
+
+
+###  http://example.org/Facebook#Tagged_Media
+Facebook:Tagged_Media rdf:type owl:Class ;
+                      rdfs:subClassOf Facebook:Media ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty Facebook:Media_Contains_Tag ;
+                                        owl:someValuesFrom Facebook:Media
+                                      ] .
+
+
+###  http://example.org/Facebook#Tagged_Post
+Facebook:Tagged_Post rdf:type owl:Class ;
+                     rdfs:subClassOf Facebook:Post ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty Facebook:Post_Contains_Tag ;
+                                       owl:someValuesFrom Facebook:Post
+                                     ] .
+
+
+###  http://example.org/Facebook#Unpurchased_Products
+Facebook:Unpurchased_Products rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( Facebook:Product
+                                                                         [ rdf:type owl:Class ;
+                                                                           owl:complementOf Facebook:Purchased_Products
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf Facebook:Product .
+
+
+###  http://example.org/Facebook#User
+Facebook:User rdf:type owl:Class ;
+              rdfs:subClassOf Facebook:Entity .
+
+
+###  http://example.org/Facebook#User_Seller
+Facebook:User_Seller rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( Facebook:Seller
+                                                                Facebook:User
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf rdfs:Resource .
+
+
+###  http://example.org/Facebook#Video
+Facebook:Video rdf:type owl:Class ;
+               rdfs:subClassOf Facebook:Media .
+
+
+###  http://example.org/Facebook#Visibility
+Facebook:Visibility rdf:type owl:Class ;
+                    rdfs:subClassOf rdfs:Resource .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Resource
+rdfs:Resource rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/Facebook#Comment_1
+Facebook:Comment_1 rdf:type owl:NamedIndividual ,
+                            Facebook:Comment ;
+                   Facebook:Comment_By Facebook:User_1 ;
+                   Facebook:Reply Facebook:Comment_2 .
+
+
+###  http://example.org/Facebook#Comment_2
+Facebook:Comment_2 rdf:type owl:NamedIndividual ,
+                            Facebook:Comment ;
+                   Facebook:Comment_Contains_Tag Facebook:Tag_1 .
+
+
+###  http://example.org/Facebook#Dress_1
+Facebook:Dress_1 rdf:type owl:NamedIndividual ,
+                          Facebook:Dress .
+
+
+###  http://example.org/Facebook#Event_1
+Facebook:Event_1 rdf:type owl:NamedIndividual ,
+                          Facebook:Event .
+
+
+###  http://example.org/Facebook#Group_1
+Facebook:Group_1 rdf:type owl:NamedIndividual ,
+                          Facebook:Group ;
+                 Facebook:Members Facebook:User_1 ,
+                                  Facebook:User_2 ,
+                                  Facebook:User_3 ,
+                                  Facebook:User_7 ;
+                 Facebook:Group_Admin Facebook:User_1 ;
+                 Facebook:Group_Background_Cover Facebook:Image_1_group_cover ;
+                 Facebook:Group_Created_By Facebook:User_1 ;
+                 Facebook:Group_Creation_Date "2022-11-25"^^xsd:date ;
+                 Facebook:Group_Moderator Facebook:User_1 ;
+                 Facebook:Group_Name "Football team" ;
+                 Facebook:Group_Visibility Facebook:Public_1 .
+
+
+###  http://example.org/Facebook#Group_11
+Facebook:Group_11 rdf:type owl:NamedIndividual ,
+                           Facebook:Group ;
+                  Facebook:Members Facebook:User_10 ,
+                                   Facebook:User_11 ,
+                                   Facebook:User_8 ,
+                                   Facebook:User_9 ;
+                  Facebook:Group_Admin Facebook:User_11 ;
+                  Facebook:Group_Background_Cover Facebook:Image_11_group_cover ;
+                  Facebook:Group_Created_By Facebook:User_11 ;
+                  Facebook:Group_Moderator Facebook:User_11 ;
+                  Facebook:Group_Name "Dog owners" .
+
+
+###  http://example.org/Facebook#Group_2
+Facebook:Group_2 rdf:type owl:NamedIndividual ,
+                          Facebook:Group ;
+                 Facebook:Members Facebook:User_1 ,
+                                  Facebook:User_2 ,
+                                  Facebook:User_5 ,
+                                  Facebook:User_6 ;
+                 Facebook:Group_Admin Facebook:User_2 ;
+                 Facebook:Group_Background_Cover Facebook:Image_2_group_cover ;
+                 Facebook:Group_Created_By Facebook:User_2 ;
+                 Facebook:Group_Moderator Facebook:User_2 ;
+                 Facebook:Group_Name "study group" ;
+                 Facebook:Group_Visibility Facebook:Private_1 .
+
+
+###  http://example.org/Facebook#Group_3
+Facebook:Group_3 rdf:type owl:NamedIndividual ,
+                          Facebook:Group ;
+                 Facebook:Members Facebook:User_2 ,
+                                  Facebook:User_3 ,
+                                  Facebook:User_4 ,
+                                  Facebook:User_8 ;
+                 Facebook:Group_Admin Facebook:User_3 ;
+                 Facebook:Group_Background_Cover Facebook:Image_3_group_cover ;
+                 Facebook:Group_Created_By Facebook:User_3 ;
+                 Facebook:Group_Moderator Facebook:User_3 ;
+                 Facebook:Group_Name "csd undergraduates" ;
+                 Facebook:Group_Visibility Facebook:Public_1 .
+
+
+###  http://example.org/Facebook#Group_6
+Facebook:Group_6 rdf:type owl:NamedIndividual ,
+                          Facebook:Group ;
+                 Facebook:Members Facebook:User_2 ,
+                                  Facebook:User_3 ,
+                                  Facebook:User_4 ,
+                                  Facebook:User_5 ,
+                                  Facebook:User_6 ,
+                                  Facebook:User_7 ;
+                 Facebook:Group_Admin Facebook:User_5 ,
+                                      Facebook:User_6 ;
+                 Facebook:Group_Moderator Facebook:User_6 ;
+                 Facebook:Group_Name "forest hikers" ;
+                 Facebook:Group_Visibility Facebook:Public_1 .
+
+
+###  http://example.org/Facebook#Hoodies_1
+Facebook:Hoodies_1 rdf:type owl:NamedIndividual ,
+                            Facebook:Hoodies .
+
+
+###  http://example.org/Facebook#Image_1
+Facebook:Image_1 rdf:type owl:NamedIndividual ,
+                          Facebook:Image ;
+                 Facebook:File_Name "zoologikos.png" ;
+                 Facebook:Content_Created_Date "2012-11-25"^^xsd:date ;
+                 Facebook:Content_Visibility Facebook:Public_1 ;
+                 Facebook:Media_Contains_Tag Facebook:Tag_1 ;
+                 Facebook:Publication_Body "Ego ke i mama mu ston zoologiko kipo" ;
+                 Facebook:Publication_Created_By Facebook:User_1 ;
+                 Facebook:Publication_Likes Facebook:User_5 ,
+                                            Facebook:User_6 ,
+                                            Facebook:User_7 ,
+                                            Facebook:User_8 .
+
+
+###  http://example.org/Facebook#Image_10
+Facebook:Image_10 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_10_cover
+Facebook:Image_10_cover rdf:type owl:NamedIndividual ,
+                                 Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_11
+Facebook:Image_11 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_11-cover
+Facebook:Image_11-cover rdf:type owl:NamedIndividual ,
+                                 Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_11_group_cover
+Facebook:Image_11_group_cover rdf:type owl:NamedIndividual ,
+                                       Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_12
+Facebook:Image_12 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_13
+Facebook:Image_13 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_14
+Facebook:Image_14 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_15
+Facebook:Image_15 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_16
+Facebook:Image_16 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_17
+Facebook:Image_17 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_18
+Facebook:Image_18 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_19
+Facebook:Image_19 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_1_cover
+Facebook:Image_1_cover rdf:type owl:NamedIndividual ,
+                                Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_1_group_cover
+Facebook:Image_1_group_cover rdf:type owl:NamedIndividual ,
+                                      Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_1_page
+Facebook:Image_1_page rdf:type owl:NamedIndividual ,
+                               Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_1_page_cover
+Facebook:Image_1_page_cover rdf:type owl:NamedIndividual ,
+                                     Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_2
+Facebook:Image_2 rdf:type owl:NamedIndividual ,
+                          Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_20
+Facebook:Image_20 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_21
+Facebook:Image_21 rdf:type owl:NamedIndividual ,
+                           Facebook:Image ;
+                  Facebook:Media_Contains_Tag Facebook:Tag_1 .
+
+
+###  http://example.org/Facebook#Image_22
+Facebook:Image_22 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_23
+Facebook:Image_23 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_24
+Facebook:Image_24 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_25
+Facebook:Image_25 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_26_cover
+Facebook:Image_26_cover rdf:type owl:NamedIndividual ,
+                                 Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_27_cover
+Facebook:Image_27_cover rdf:type owl:NamedIndividual ,
+                                 Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_28
+Facebook:Image_28 rdf:type owl:NamedIndividual ,
+                           Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_28_cover
+Facebook:Image_28_cover rdf:type owl:NamedIndividual ,
+                                 Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_29_cover
+Facebook:Image_29_cover rdf:type owl:NamedIndividual ,
+                                 Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_2_cover
+Facebook:Image_2_cover rdf:type owl:NamedIndividual ,
+                                Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_2_group_cover
+Facebook:Image_2_group_cover rdf:type owl:NamedIndividual ,
+                                      Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_2_page
+Facebook:Image_2_page rdf:type owl:NamedIndividual ,
+                               Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_3
+Facebook:Image_3 rdf:type owl:NamedIndividual ,
+                          Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_3_cover
+Facebook:Image_3_cover rdf:type owl:NamedIndividual ,
+                                Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_3_group_cover
+Facebook:Image_3_group_cover rdf:type owl:NamedIndividual ,
+                                      Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_3_page
+Facebook:Image_3_page rdf:type owl:NamedIndividual ,
+                               Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_3_page_cover
+Facebook:Image_3_page_cover rdf:type owl:NamedIndividual ,
+                                     Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_4
+Facebook:Image_4 rdf:type owl:NamedIndividual ,
+                          Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_4_cover
+Facebook:Image_4_cover rdf:type owl:NamedIndividual ,
+                                Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_5
+Facebook:Image_5 rdf:type owl:NamedIndividual ,
+                          Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_5_cover
+Facebook:Image_5_cover rdf:type owl:NamedIndividual ,
+                                Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_5_page
+Facebook:Image_5_page rdf:type owl:NamedIndividual ,
+                               Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_6
+Facebook:Image_6 rdf:type owl:NamedIndividual ,
+                          Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_6_cover
+Facebook:Image_6_cover rdf:type owl:NamedIndividual ,
+                                Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_6_page
+Facebook:Image_6_page rdf:type owl:NamedIndividual ,
+                               Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_7
+Facebook:Image_7 rdf:type owl:NamedIndividual ,
+                          Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_7_cover
+Facebook:Image_7_cover rdf:type owl:NamedIndividual ,
+                                Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_8
+Facebook:Image_8 rdf:type owl:NamedIndividual ,
+                          Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_8_cover
+Facebook:Image_8_cover rdf:type owl:NamedIndividual ,
+                                Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_8_page
+Facebook:Image_8_page rdf:type owl:NamedIndividual ,
+                               Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_9
+Facebook:Image_9 rdf:type owl:NamedIndividual ,
+                          Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_9_cover
+Facebook:Image_9_cover rdf:type owl:NamedIndividual ,
+                                Facebook:Image .
+
+
+###  http://example.org/Facebook#Image_9_page
+Facebook:Image_9_page rdf:type owl:NamedIndividual ,
+                               Facebook:Image .
+
+
+###  http://example.org/Facebook#Laptop_1
+Facebook:Laptop_1 rdf:type owl:NamedIndividual ,
+                           Facebook:Laptop .
+
+
+###  http://example.org/Facebook#Marketplace_1
+Facebook:Marketplace_1 rdf:type owl:NamedIndividual ,
+                                Facebook:Marketplace .
+
+
+###  http://example.org/Facebook#Page_1
+Facebook:Page_1 rdf:type owl:NamedIndividual ,
+                         Facebook:Page ;
+                Facebook:Follow Facebook:Page_2 ,
+                                Facebook:Page_4 ;
+                Facebook:PFP Facebook:Image_1_page ;
+                Facebook:Page_Advertiser Facebook:User_1 ;
+                Facebook:Page_Editor Facebook:User_1 ;
+                Facebook:Entity_Cover Facebook:Image_1_page_cover ;
+                Facebook:Entity_Location "Greece" ;
+                Facebook:Page_Admin Facebook:User_1 ;
+                Facebook:Page_Analyst Facebook:User_1 ;
+                Facebook:Page_Creation_Date "2012-09-03"^^xsd:date ;
+                Facebook:Page_Likes Facebook:Page_1 ,
+                                    Facebook:Page_2 ,
+                                    Facebook:Page_4 ,
+                                    Facebook:Page_9 ;
+                Facebook:Page_Moderator Facebook:User_1 ;
+                Facebook:Page_Name "Cute kitties" .
+
+
+###  http://example.org/Facebook#Page_2
+Facebook:Page_2 rdf:type owl:NamedIndividual ,
+                         Facebook:Page ;
+                Facebook:Follow Facebook:Page_1 ,
+                                Facebook:Page_5 ,
+                                Facebook:Page_6 ,
+                                Facebook:User_2 ;
+                Facebook:PFP Facebook:Image_2_page ;
+                Facebook:Page_Advertiser Facebook:User_2 ;
+                Facebook:Page_Editor Facebook:User_2 ;
+                Facebook:Entity_Cover Facebook:Image_26_cover ;
+                Facebook:Entity_Location "France" ;
+                Facebook:Page_Admin Facebook:User_2 ;
+                Facebook:Page_Analyst Facebook:User_2 ;
+                Facebook:Page_Creation_Date "2022-11-25"^^xsd:date ;
+                Facebook:Page_Likes Facebook:Page_1 ,
+                                    Facebook:Page_8 ,
+                                    Facebook:User_1 ,
+                                    Facebook:User_2 ;
+                Facebook:Page_Moderator Facebook:User_2 ;
+                Facebook:Page_Name "Melangez des animaux" .
+
+
+###  http://example.org/Facebook#Page_3
+Facebook:Page_3 rdf:type owl:NamedIndividual ,
+                         Facebook:Page ;
+                Facebook:Follow Facebook:User_3 ;
+                Facebook:PFP Facebook:Image_3_page ;
+                Facebook:Page_Advertiser Facebook:User_3 ;
+                Facebook:Page_Editor Facebook:User_3 ;
+                Facebook:Entity_Cover Facebook:Image_3_page_cover ;
+                Facebook:Entity_Location "Germany" ;
+                Facebook:Page_Admin Facebook:User_3 ;
+                Facebook:Page_Analyst Facebook:User_2 ;
+                Facebook:Page_Creation_Date "2022-11-25"^^xsd:date ;
+                Facebook:Page_Likes Facebook:Page_5 ,
+                                    Facebook:Page_6 ,
+                                    Facebook:Page_8 ,
+                                    Facebook:User_2 ,
+                                    Facebook:User_4 ,
+                                    Facebook:User_6 ,
+                                    Facebook:User_7 ,
+                                    Facebook:User_8 ;
+                Facebook:Page_Moderator Facebook:User_3 ;
+                Facebook:Page_Name "Schalke uber alles " .
+
+
+###  http://example.org/Facebook#Page_4
+Facebook:Page_4 rdf:type owl:NamedIndividual ,
+                         Facebook:Page ;
+                Facebook:PFP Facebook:Image_28 ;
+                Facebook:Page_Editor Facebook:User_2 ;
+                Facebook:Entity_Cover Facebook:Image_28_cover ;
+                Facebook:Entity_Location "Mexico" ;
+                Facebook:Page_Admin Facebook:User_6 ;
+                Facebook:Page_Analyst Facebook:Page_8 ;
+                Facebook:Page_Creation_Date "2019-08-01"^^xsd:date ;
+                Facebook:Page_Likes Facebook:User_1 ,
+                                    Facebook:User_10 ,
+                                    Facebook:User_11 ,
+                                    Facebook:User_2 ,
+                                    Facebook:User_3 ,
+                                    Facebook:User_4 ,
+                                    Facebook:User_5 ,
+                                    Facebook:User_6 ,
+                                    Facebook:User_7 ,
+                                    Facebook:User_8 ,
+                                    Facebook:User_9 ;
+                Facebook:Page_Name "Migeulito Akerfeldt Posting" .
+
+
+###  http://example.org/Facebook#Page_5
+Facebook:Page_5 rdf:type owl:NamedIndividual ,
+                         Facebook:Page ;
+                Facebook:Follow Facebook:Page_6 ,
+                                Facebook:User_6 ;
+                Facebook:PFP Facebook:Image_5_page ;
+                Facebook:Page_Advertiser Facebook:User_5 ,
+                                         Facebook:User_6 ;
+                Facebook:Page_Editor Facebook:User_5 ,
+                                     Facebook:User_6 ;
+                Facebook:Entity_Cover Facebook:Image_27_cover ;
+                Facebook:Entity_Location "Indonesia" ;
+                Facebook:Page_Admin Facebook:User_5 ,
+                                    Facebook:User_6 ;
+                Facebook:Page_Analyst Facebook:User_2 ;
+                Facebook:Page_Creation_Date "2020-05-01"^^xsd:date ;
+                Facebook:Page_Likes Facebook:User_10 ,
+                                    Facebook:User_2 ,
+                                    Facebook:User_3 ,
+                                    Facebook:User_4 ,
+                                    Facebook:User_5 ,
+                                    Facebook:User_7 ,
+                                    Facebook:User_8 ;
+                Facebook:Page_Moderator Facebook:User_5 ;
+                Facebook:Page_Name "Legend of Majumaru Indo Community" .
+
+
+###  http://example.org/Facebook#Page_6
+Facebook:Page_6 rdf:type owl:NamedIndividual ,
+                         Facebook:Page ;
+                Facebook:Follow Facebook:Page_5 ,
+                                Facebook:User_3 ,
+                                Facebook:User_5 ,
+                                Facebook:User_6 ;
+                Facebook:PFP Facebook:Image_6_page ;
+                Facebook:Page_Advertiser Facebook:User_5 ,
+                                         Facebook:User_6 ;
+                Facebook:Page_Editor Facebook:User_6 ;
+                Facebook:Entity_Cover Facebook:Image_29_cover ;
+                Facebook:Entity_Location "France" ;
+                Facebook:Page_Admin Facebook:User_5 ,
+                                    Facebook:User_6 ;
+                Facebook:Page_Analyst Facebook:User_1 ;
+                Facebook:Page_Creation_Date "2021-09-30"^^xsd:date ;
+                Facebook:Page_Likes Facebook:Page_4 ,
+                                    Facebook:Page_5 ,
+                                    Facebook:Page_9 ,
+                                    Facebook:User_2 ,
+                                    Facebook:User_5 ,
+                                    Facebook:User_6 ,
+                                    Facebook:User_8 ;
+                Facebook:Page_Moderator Facebook:User_6 ;
+                Facebook:Page_Name "Movies" .
+
+
+###  http://example.org/Facebook#Page_8
+Facebook:Page_8 rdf:type owl:NamedIndividual ,
+                         Facebook:Page ;
+                Facebook:Follow Facebook:Page_9 ,
+                                Facebook:User_8 ;
+                Facebook:PFP Facebook:Image_8_page ;
+                Facebook:Page_Advertiser Facebook:User_8 ;
+                Facebook:Page_Editor Facebook:User_8 ;
+                Facebook:Page_Admin Facebook:User_8 ;
+                Facebook:Page_Analyst Facebook:User_8 ;
+                Facebook:Page_Creation_Date "2019-12-03"^^xsd:date ;
+                Facebook:Page_Likes Facebook:Page_9 ;
+                Facebook:Page_Moderator Facebook:User_8 .
+
+
+###  http://example.org/Facebook#Page_9
+Facebook:Page_9 rdf:type owl:NamedIndividual ,
+                         Facebook:Page ;
+                Facebook:Follow Facebook:User_1 ,
+                                Facebook:User_10 ,
+                                Facebook:User_11 ,
+                                Facebook:User_4 ,
+                                Facebook:User_8 ;
+                Facebook:PFP Facebook:Image_9_page ;
+                Facebook:Page_Advertiser Facebook:User_10 ,
+                                         Facebook:User_8 ,
+                                         Facebook:User_9 ;
+                Facebook:Page_Editor Facebook:User_8 ;
+                Facebook:Page_Admin Facebook:User_9 ;
+                Facebook:Page_Analyst Facebook:User_9 ;
+                Facebook:Page_Creation_Date "2022-11-25"^^xsd:date ;
+                Facebook:Page_Likes Facebook:User_9 ;
+                Facebook:Page_Moderator Facebook:User_9 .
+
+
+###  http://example.org/Facebook#Phone_1
+Facebook:Phone_1 rdf:type owl:NamedIndividual ,
+                          Facebook:Phone .
+
+
+###  http://example.org/Facebook#Post_1
+Facebook:Post_1 rdf:type owl:NamedIndividual ,
+                         Facebook:Post .
+
+
+###  http://example.org/Facebook#Private_1
+Facebook:Private_1 rdf:type owl:NamedIndividual ,
+                            Facebook:Private .
+
+
+###  http://example.org/Facebook#Product_1
+Facebook:Product_1 rdf:type owl:NamedIndividual ,
+                            Facebook:Product ;
+                   Facebook:Interchange Facebook:Seller_1 ;
+                   Facebook:Marketplace_Product Facebook:Marketplace_1 ;
+                   Facebook:Product_Category Facebook:Dress_1 ;
+                   Facebook:Product_Images Facebook:Image_12 ,
+                                           Facebook:Image_13 ,
+                                           Facebook:Image_14 ;
+                   Facebook:Price 8.5 ;
+                   Facebook:Product_Creation_Date "2022-11-25"^^xsd:date ;
+                   Facebook:Product_Description "Forema se S apo to Bershka to pulao logo lauos megeuous" ;
+                   Facebook:Product_Name "Bershka Forema" .
+
+
+###  http://example.org/Facebook#Product_2
+Facebook:Product_2 rdf:type owl:NamedIndividual ,
+                            Facebook:Product ;
+                   Facebook:Interchange Facebook:Seller_1 ;
+                   Facebook:Marketplace_Product Facebook:Marketplace_1 ;
+                   Facebook:Product_Category Facebook:Hoodies_1 ;
+                   Facebook:Product_Images Facebook:Image_20 ;
+                   Facebook:Price 300 ;
+                   Facebook:Product_Creation_Date "2022-11-23"^^xsd:date ;
+                   Facebook:Product_Name "Gucci Some Hoodie" .
+
+
+###  http://example.org/Facebook#Product_3
+Facebook:Product_3 rdf:type owl:NamedIndividual ,
+                            Facebook:Product ;
+                   Facebook:Interchange Facebook:Seller_1 ;
+                   Facebook:Marketplace_Product Facebook:Marketplace_1 ;
+                   Facebook:Product_Category Facebook:Smartwatch_1 ;
+                   Facebook:Product_Images Facebook:Image_21 ,
+                                           Facebook:Image_22 ;
+                   Facebook:Price 150 ;
+                   Facebook:Product_Creation_Date "2022-11-21"^^xsd:date ;
+                   Facebook:Product_Name "Apple smartwatch 1" .
+
+
+###  http://example.org/Facebook#Product_4
+Facebook:Product_4 rdf:type owl:NamedIndividual ,
+                            Facebook:Product ;
+                   Facebook:Interchange Facebook:Seller_2 ;
+                   Facebook:Marketplace_Product Facebook:Marketplace_1 ;
+                   Facebook:Product_Category Facebook:Phone_1 ;
+                   Facebook:Product_Images Facebook:Image_23 ;
+                   Facebook:Price 190 ;
+                   Facebook:Product_Creation_Date "2022-10-25"^^xsd:date ;
+                   Facebook:Product_Description "Iphone 12 Pro Max ICLOUD LOCKED dinete mono se atoma pu jerun apo LOCKED iphone. Den ine klemeno !11!!1" ;
+                   Facebook:Product_Name "Iphone 12 Pro Max ICLOUD LOCKED" .
+
+
+###  http://example.org/Facebook#Product_5
+Facebook:Product_5 rdf:type owl:NamedIndividual ,
+                            Facebook:Product ;
+                   Facebook:Interchange Facebook:Seller_3 ;
+                   Facebook:Marketplace_Product Facebook:Marketplace_1 ;
+                   Facebook:Product_Category Facebook:Shoes_1 ;
+                   Facebook:Product_Images Facebook:Image_24 ;
+                   Facebook:Price 102 ;
+                   Facebook:Product_Creation_Date "2022-09-05"^^xsd:date ;
+                   Facebook:Product_Description "MOON BOOT botakia ta dino epidi telika espasa ta podia mu ke den ua mporeso na pao gia ski fetos. Ine aforeta. Numero 38 ginekio alla pistevo kanun ke se andres mehri numero 39." ;
+                   Facebook:Product_Name "MOON BOOT 256FGB15" .
+
+
+###  http://example.org/Facebook#Product_6
+Facebook:Product_6 rdf:type owl:NamedIndividual ,
+                            Facebook:Product ;
+                   Facebook:Interchange Facebook:Seller_3 ;
+                   Facebook:Marketplace_Product Facebook:Marketplace_1 ;
+                   Facebook:Product_Category Facebook:Dress_1 ;
+                   Facebook:Product_Images Facebook:Image_15 ,
+                                           Facebook:Image_16 ,
+                                           Facebook:Image_17 ,
+                                           Facebook:Image_18 ,
+                                           Facebook:Image_19 ;
+                   Facebook:Price 1 ;
+                   Facebook:Product_Description "JEPULAME LOGO SINTAJIODOTISIS stilte mas minima na dite ta ipolipa kommatia tis viotehnias mas pu klini se poli prosites times! Vintage kommatia!" ;
+                   Facebook:Product_Name "FOREMATA" .
+
+
+###  http://example.org/Facebook#Product_7
+Facebook:Product_7 rdf:type owl:NamedIndividual ,
+                            Facebook:Product ;
+                   Facebook:Interchange Facebook:Seller_3 ;
+                   Facebook:Marketplace_Product Facebook:Marketplace_1 ;
+                   Facebook:Product_Category Facebook:Laptop_1 ;
+                   Facebook:Product_Images Facebook:Image_25 ;
+                   Facebook:Price 1500 ;
+                   Facebook:Product_Creation_Date "2022-11-25"^^xsd:date ;
+                   Facebook:Product_Description "o logos pu to dino ine epidi den boro na hrisimopiiso mac ke uelo na valo windows. Dio fores to anija ine auikto. Ohi pazaria." ;
+                   Facebook:Product_Name "Macbook Air 13.3' M1 16GB SSD 256GB" .
+
+
+###  http://example.org/Facebook#Public_1
+Facebook:Public_1 rdf:type owl:NamedIndividual ,
+                           Facebook:Public .
+
+
+###  http://example.org/Facebook#Publication_1
+Facebook:Publication_1 rdf:type owl:NamedIndividual ,
+                                Facebook:Publication .
+
+
+###  http://example.org/Facebook#Review_1
+Facebook:Review_1 rdf:type owl:NamedIndividual ,
+                           Facebook:Review .
+
+
+###  http://example.org/Facebook#Seller_1
+Facebook:Seller_1 rdf:type owl:NamedIndividual ,
+                           Facebook:Seller ;
+                  Facebook:isEntity Facebook:User_1 .
+
+
+###  http://example.org/Facebook#Seller_2
+Facebook:Seller_2 rdf:type owl:NamedIndividual ,
+                           Facebook:Seller ;
+                  Facebook:isEntity Facebook:Page_3 .
+
+
+###  http://example.org/Facebook#Seller_3
+Facebook:Seller_3 rdf:type owl:NamedIndividual ,
+                           Facebook:Seller ;
+                  Facebook:isEntity Facebook:User_7 .
+
+
+###  http://example.org/Facebook#Shoes_1
+Facebook:Shoes_1 rdf:type owl:NamedIndividual ,
+                          Facebook:Shoes .
+
+
+###  http://example.org/Facebook#Smartwatch_1
+Facebook:Smartwatch_1 rdf:type owl:NamedIndividual ,
+                               Facebook:Smartwatch .
+
+
+###  http://example.org/Facebook#Tag_1
+Facebook:Tag_1 rdf:type owl:NamedIndividual ,
+                        Facebook:Tag ;
+               Facebook:Tag_By_Entity Facebook:User_2 ;
+               Facebook:Tagging Facebook:User_1 .
+
+
+###  http://example.org/Facebook#User_1
+Facebook:User_1 rdf:type owl:NamedIndividual ,
+                         Facebook:User ;
+                Facebook:Follow Facebook:Page_1 ,
+                                Facebook:Page_2 ,
+                                Facebook:User_1 ,
+                                Facebook:User_2 ;
+                Facebook:Friend Facebook:User_2 ,
+                                Facebook:User_3 ,
+                                Facebook:User_5 ,
+                                Facebook:User_6 ,
+                                Facebook:User_7 ,
+                                Facebook:User_8 ,
+                                Facebook:User_9 ;
+                Facebook:PFP Facebook:Image_1 ;
+                Facebook:User_Created_Page Facebook:Page_1 ;
+                Facebook:Birth_Date "2001-11-25"^^xsd:date ;
+                Facebook:First_Name "Eleni" ;
+                Facebook:First_Name_Pronunciation "e [eh] le [lay] ni [nee]" ;
+                Facebook:Language "English" ,
+                                  "Greek" ,
+                                  "Norsk" ;
+                Facebook:Last_Name "Mnd" ;
+                Facebook:Last_Name_Pronunciation "[eem en dee]" ;
+                Facebook:Pronoun "she/her" ;
+                Facebook:Entity_Cover Facebook:Image_1_cover ;
+                Facebook:Entity_Location "Serres, Greece" .
+
+
+###  http://example.org/Facebook#User_10
+Facebook:User_10 rdf:type owl:NamedIndividual ,
+                          Facebook:User ;
+                 Facebook:Follow Facebook:Page_9 ;
+                 Facebook:Friend Facebook:User_10 ,
+                                 Facebook:User_6 ,
+                                 Facebook:User_8 ,
+                                 Facebook:User_9 ;
+                 Facebook:PFP Facebook:Image_10 ;
+                 Facebook:First_Name "Petros" ;
+                 Facebook:Language "french" ;
+                 Facebook:Last_Name "Papadopoulos" ;
+                 Facebook:Pronoun "she" ;
+                 Facebook:Entity_Cover Facebook:Image_10_cover .
+
+
+###  http://example.org/Facebook#User_11
+Facebook:User_11 rdf:type owl:NamedIndividual ,
+                          Facebook:User ;
+                 Facebook:Follow Facebook:Page_4 ,
+                                 Facebook:Page_8 ,
+                                 Facebook:Page_9 ;
+                 Facebook:Friend Facebook:User_1 ,
+                                 Facebook:User_10 ,
+                                 Facebook:User_11 ,
+                                 Facebook:User_2 ,
+                                 Facebook:User_3 ,
+                                 Facebook:User_4 ,
+                                 Facebook:User_5 ,
+                                 Facebook:User_6 ,
+                                 Facebook:User_7 ,
+                                 Facebook:User_8 ,
+                                 Facebook:User_9 ;
+                 Facebook:PFP Facebook:Image_11 ;
+                 Facebook:User_Created_Page Facebook:Page_4 ;
+                 Facebook:First_Name "Mitsos" ;
+                 Facebook:Language "english" ;
+                 Facebook:Last_Name "Mitsaras" ;
+                 Facebook:Entity_Cover Facebook:Image_11-cover .
+
+
+###  http://example.org/Facebook#User_2
+Facebook:User_2 rdf:type owl:NamedIndividual ,
+                         Facebook:User ;
+                Facebook:Follow Facebook:Page_1 ,
+                                Facebook:Page_2 ,
+                                Facebook:Page_5 ,
+                                Facebook:Page_6 ;
+                Facebook:Friend Facebook:User_1 ,
+                                Facebook:User_2 ,
+                                Facebook:User_5 ,
+                                Facebook:User_6 ;
+                Facebook:PFP Facebook:Image_2 ;
+                Facebook:User_Created_Page Facebook:Page_2 ;
+                Facebook:First_Name "Erofili" ;
+                Facebook:Language "English" ,
+                                  "German" ,
+                                  "Spanish" ,
+                                  "greek" ;
+                Facebook:Last_Name "Konsta" ;
+                Facebook:Pronoun "she" ;
+                Facebook:Entity_Cover Facebook:Image_2_cover ;
+                Facebook:Page_Admin Facebook:Page_2 .
+
+
+###  http://example.org/Facebook#User_3
+Facebook:User_3 rdf:type owl:NamedIndividual ,
+                         Facebook:User ;
+                Facebook:Follow Facebook:Page_1 ,
+                                Facebook:Page_2 ,
+                                Facebook:Page_3 ;
+                Facebook:Friend Facebook:User_1 ,
+                                Facebook:User_2 ,
+                                Facebook:User_4 ;
+                Facebook:PFP Facebook:Image_3 ;
+                Facebook:User_Created_Page Facebook:Page_3 ;
+                Facebook:First_Name "Kostas" ;
+                Facebook:Language "Greek" ,
+                                  "english" ;
+                Facebook:Last_Name "Giotas" ;
+                Facebook:Pronoun "They" ;
+                Facebook:Entity_Cover Facebook:Image_3_cover .
+
+
+###  http://example.org/Facebook#User_4
+Facebook:User_4 rdf:type owl:NamedIndividual ,
+                         Facebook:User ;
+                Facebook:Follow Facebook:Page_1 ,
+                                Facebook:Page_3 ,
+                                Facebook:User_5 ,
+                                Facebook:User_6 ;
+                Facebook:Friend Facebook:User_1 ,
+                                Facebook:User_2 ,
+                                Facebook:User_5 ,
+                                Facebook:User_6 ;
+                Facebook:PFP Facebook:Image_4 ;
+                Facebook:First_Name "Konstantina" ;
+                Facebook:Language "German" ;
+                Facebook:Last_Name "Tsi" ;
+                Facebook:Entity_Cover Facebook:Image_4_cover .
+
+
+###  http://example.org/Facebook#User_5
+Facebook:User_5 rdf:type owl:NamedIndividual ,
+                         Facebook:User ;
+                Facebook:Follow Facebook:Page_2 ,
+                                Facebook:Page_5 ,
+                                Facebook:User_6 ;
+                Facebook:Friend Facebook:User_2 ,
+                                Facebook:User_6 ;
+                Facebook:PFP Facebook:Image_5 ;
+                Facebook:User_Created_Page Facebook:Page_5 ;
+                Facebook:First_Name "Giorgos" ;
+                Facebook:Last_Name "Blake" ;
+                Facebook:Last_Name_Pronunciation "/Bleik/" ;
+                Facebook:Pronoun "HE" ;
+                Facebook:Entity_Cover Facebook:Image_5_cover .
+
+
+###  http://example.org/Facebook#User_6
+Facebook:User_6 rdf:type owl:NamedIndividual ,
+                         Facebook:User ;
+                Facebook:Follow Facebook:Page_1 ,
+                                Facebook:Page_2 ,
+                                Facebook:Page_5 ,
+                                Facebook:Page_6 ,
+                                Facebook:User_2 ,
+                                Facebook:User_5 ;
+                Facebook:Friend Facebook:User_1 ,
+                                Facebook:User_2 ,
+                                Facebook:User_3 ,
+                                Facebook:User_4 ,
+                                Facebook:User_5 ,
+                                Facebook:User_7 ;
+                Facebook:PFP Facebook:Image_6 ;
+                Facebook:User_Created_Page Facebook:Page_6 ;
+                Facebook:First_Name "Dimitris" ;
+                Facebook:Last_Name "Papakostantinou" ;
+                Facebook:Entity_Cover Facebook:Image_6_cover .
+
+
+###  http://example.org/Facebook#User_7
+Facebook:User_7 rdf:type owl:NamedIndividual ,
+                         Facebook:User ;
+                Facebook:Follow Facebook:Page_2 ,
+                                Facebook:Page_5 ,
+                                Facebook:Page_6 ;
+                Facebook:Friend Facebook:User_1 ,
+                                Facebook:User_5 ,
+                                Facebook:User_6 ;
+                Facebook:PFP Facebook:Image_7 ;
+                Facebook:First_Name "Maria" ;
+                Facebook:Last_Name "Mandana" ;
+                Facebook:Entity_Cover Facebook:Image_7_cover .
+
+
+###  http://example.org/Facebook#User_8
+Facebook:User_8 rdf:type owl:NamedIndividual ,
+                         Facebook:User ;
+                Facebook:Follow Facebook:Page_2 ,
+                                Facebook:Page_8 ;
+                Facebook:Friend Facebook:User_10 ,
+                                Facebook:User_11 ,
+                                Facebook:User_9 ;
+                Facebook:PFP Facebook:Image_8 ;
+                Facebook:User_Created_Page Facebook:Page_8 ;
+                Facebook:First_Name "Ilias" ;
+                Facebook:Language "english" ,
+                                  "german" ;
+                Facebook:Last_Name "Konstas" ;
+                Facebook:Entity_Cover Facebook:Image_8_cover .
+
+
+###  http://example.org/Facebook#User_9
+Facebook:User_9 rdf:type owl:NamedIndividual ,
+                         Facebook:User ;
+                Facebook:Follow Facebook:Page_1 ,
+                                Facebook:Page_2 ,
+                                Facebook:User_8 ;
+                Facebook:Friend Facebook:User_1 ,
+                                Facebook:User_2 ,
+                                Facebook:User_5 ,
+                                Facebook:User_8 ,
+                                Facebook:User_9 ;
+                Facebook:PFP Facebook:Image_9 ;
+                Facebook:User_Created_Page Facebook:Page_9 ;
+                Facebook:First_Name "Nikos" ;
+                Facebook:Language "english" ;
+                Facebook:Last_Name "Mandanas" ;
+                Facebook:Entity_Cover Facebook:Image_9_cover .
+
+
+###  http://example.org/Facebook#Video_1
+Facebook:Video_1 rdf:type owl:NamedIndividual ,
+                          Facebook:Video .
+
+
+###  http://example.org/Facebook#seller
+Facebook:seller rdf:type owl:NamedIndividual ,
+                         Facebook:Seller .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Facebook:Comment
+                Facebook:Event
+                Facebook:Image
+                Facebook:Post
+                Facebook:Review
+                Facebook:Video
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Facebook:Dress
+                Facebook:Hoodies
+                Facebook:Shoes
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Facebook:Entity
+                Facebook:Group
+                Facebook:Marketplace
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( Facebook:Laptop
+                Facebook:Phone
+                Facebook:Smartwatch
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
