@@ -1,0 +1,1217 @@
+# baseURI: http://example.org/Facebook
+# prefix: Facebook
+
+@prefix Facebook: <http://example.org/Facebook#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/Facebook>
+  rdf:type owl:Ontology ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+Facebook:Birth_Date
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:User ;
+  rdfs:range xsd:date ;
+.
+Facebook:Body
+  rdf:type rdf:Property ;
+  rdfs:range xsd:string ;
+.
+Facebook:Category
+  rdf:type rdfs:Class ;
+.
+Facebook:Clothing
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Category ;
+.
+Facebook:Comment
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Publication ;
+.
+Facebook:Comment_1
+  rdf:type Facebook:Comment ;
+  Facebook:Comment_By Facebook:User_1 ;
+  Facebook:Reply Facebook:Comment_2 ;
+.
+Facebook:Comment_2
+  rdf:type Facebook:Comment ;
+  Facebook:Comment_Contains_Tag Facebook:Tag_1 ;
+.
+Facebook:Comment_By
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Comment ;
+  rdfs:range Facebook:Entity ;
+.
+Facebook:Comment_Contains_Tag
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Comment ;
+  rdfs:subPropertyOf Facebook:Contains_Tag ;
+.
+Facebook:Contains_Tag
+  rdf:type rdf:Property ;
+  rdfs:range Facebook:Tag ;
+.
+Facebook:Content_Created_Date
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Publication ;
+  rdfs:subPropertyOf Facebook:Creation_Date ;
+.
+Facebook:Content_Visibility
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Publication ;
+  rdfs:subPropertyOf Facebook:Visible ;
+.
+Facebook:Cover
+  rdf:type rdf:Property ;
+  rdfs:range Facebook:Image ;
+.
+Facebook:Created_by
+  rdf:type rdf:Property ;
+  rdfs:range Facebook:Entity ;
+.
+Facebook:Creation_Date
+  rdf:type rdf:Property ;
+  rdfs:range xsd:date ;
+.
+Facebook:Dress
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Clothing ;
+.
+Facebook:Dress_1
+  rdf:type Facebook:Dress ;
+.
+Facebook:Electronics
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Category ;
+.
+Facebook:Entity
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Facebook:Entity_Cover
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Entity ;
+  rdfs:subPropertyOf Facebook:Cover ;
+.
+Facebook:Entity_Location
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Entity ;
+  rdfs:subPropertyOf Facebook:Location ;
+.
+Facebook:Event
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Publication ;
+.
+Facebook:Event_1
+  rdf:type Facebook:Event ;
+.
+Facebook:Event_Cover_Art
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Event ;
+  rdfs:subPropertyOf Facebook:Cover ;
+.
+Facebook:Event_Date
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Event ;
+  rdfs:range xsd:dateTime ;
+.
+Facebook:Event_Name
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Event ;
+  rdfs:subPropertyOf Facebook:Name ;
+.
+Facebook:File_Name
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Media ;
+  rdfs:range xsd:string ;
+.
+Facebook:First_Name
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:User ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf Facebook:User_Name ;
+.
+Facebook:First_Name_Pronunciation
+  rdf:type rdf:Property ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf Facebook:First_Name ;
+.
+Facebook:Follow
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Entity ;
+  rdfs:range Facebook:Entity ;
+.
+Facebook:Friend
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:User ;
+  rdfs:range Facebook:User ;
+.
+Facebook:Group
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Facebook:Group_1
+  rdf:type Facebook:Group ;
+  Facebook:Group_Admin Facebook:User_1 ;
+  Facebook:Group_Background_Cover Facebook:Image_1_group_cover ;
+  Facebook:Group_Created_By Facebook:User_1 ;
+  Facebook:Group_Creation_Date "2022-11-25"^^xsd:date ;
+  Facebook:Group_Moderator Facebook:User_1 ;
+  Facebook:Group_Name "Football team" ;
+  Facebook:Group_Visibility Facebook:Public_1 ;
+  Facebook:Members Facebook:User_1 ;
+  Facebook:Members Facebook:User_2 ;
+  Facebook:Members Facebook:User_3 ;
+  Facebook:Members Facebook:User_7 ;
+.
+Facebook:Group_11
+  rdf:type Facebook:Group ;
+  Facebook:Group_Admin Facebook:User_11 ;
+  Facebook:Group_Background_Cover Facebook:Image_11_group_cover ;
+  Facebook:Group_Created_By Facebook:User_11 ;
+  Facebook:Group_Moderator Facebook:User_11 ;
+  Facebook:Group_Name "Dog owners" ;
+  Facebook:Members Facebook:User_10 ;
+  Facebook:Members Facebook:User_11 ;
+  Facebook:Members Facebook:User_8 ;
+  Facebook:Members Facebook:User_9 ;
+.
+Facebook:Group_2
+  rdf:type Facebook:Group ;
+  Facebook:Group_Admin Facebook:User_2 ;
+  Facebook:Group_Background_Cover Facebook:Image_2_group_cover ;
+  Facebook:Group_Created_By Facebook:User_2 ;
+  Facebook:Group_Moderator Facebook:User_2 ;
+  Facebook:Group_Name "study group" ;
+  Facebook:Group_Visibility Facebook:Private_1 ;
+  Facebook:Members Facebook:User_1 ;
+  Facebook:Members Facebook:User_2 ;
+  Facebook:Members Facebook:User_5 ;
+  Facebook:Members Facebook:User_6 ;
+.
+Facebook:Group_3
+  rdf:type Facebook:Group ;
+  Facebook:Group_Admin Facebook:User_3 ;
+  Facebook:Group_Background_Cover Facebook:Image_3_group_cover ;
+  Facebook:Group_Created_By Facebook:User_3 ;
+  Facebook:Group_Moderator Facebook:User_3 ;
+  Facebook:Group_Name "csd undergraduates" ;
+  Facebook:Group_Visibility Facebook:Public_1 ;
+  Facebook:Members Facebook:User_2 ;
+  Facebook:Members Facebook:User_3 ;
+  Facebook:Members Facebook:User_4 ;
+  Facebook:Members Facebook:User_8 ;
+.
+Facebook:Group_6
+  rdf:type Facebook:Group ;
+  Facebook:Group_Admin Facebook:User_5 ;
+  Facebook:Group_Admin Facebook:User_6 ;
+  Facebook:Group_Moderator Facebook:User_6 ;
+  Facebook:Group_Name "forest hikers" ;
+  Facebook:Group_Visibility Facebook:Public_1 ;
+  Facebook:Members Facebook:User_2 ;
+  Facebook:Members Facebook:User_3 ;
+  Facebook:Members Facebook:User_4 ;
+  Facebook:Members Facebook:User_5 ;
+  Facebook:Members Facebook:User_6 ;
+  Facebook:Members Facebook:User_7 ;
+.
+Facebook:Group_Admin
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Group ;
+  rdfs:range Facebook:Entity ;
+  rdfs:subPropertyOf Facebook:Group_Role ;
+.
+Facebook:Group_Background_Cover
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Group ;
+  rdfs:subPropertyOf Facebook:Cover ;
+.
+Facebook:Group_Created_By
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Group ;
+  rdfs:subPropertyOf Facebook:Created_by ;
+.
+Facebook:Group_Creation_Date
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Group ;
+  rdfs:subPropertyOf Facebook:Creation_Date ;
+.
+Facebook:Group_Moderator
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Group ;
+  rdfs:range Facebook:Entity ;
+  rdfs:subPropertyOf Facebook:Group_Role ;
+.
+Facebook:Group_Name
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Group ;
+  rdfs:subPropertyOf Facebook:Name ;
+.
+Facebook:Group_Role
+  rdf:type rdf:Property ;
+  rdfs:range Facebook:Entity ;
+  rdfs:subPropertyOf Facebook:Roles ;
+.
+Facebook:Group_Visibility
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Group ;
+  rdfs:subPropertyOf Facebook:Visible ;
+.
+Facebook:Hoodies
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Clothing ;
+.
+Facebook:Hoodies_1
+  rdf:type Facebook:Hoodies ;
+.
+Facebook:Image
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Media ;
+.
+Facebook:Image_1
+  rdf:type Facebook:Image ;
+  Facebook:Content_Created_Date "2012-11-25"^^xsd:date ;
+  Facebook:Content_Visibility Facebook:Public_1 ;
+  Facebook:File_Name "zoologikos.png" ;
+  Facebook:Publication_Body "Ego ke i mama mu ston zoologiko kipo" ;
+  Facebook:Publication_Created_By Facebook:User_1 ;
+  Facebook:Publication_Likes Facebook:User_5 ;
+  Facebook:Publication_Likes Facebook:User_6 ;
+  Facebook:Publication_Likes Facebook:User_7 ;
+  Facebook:Publication_Likes Facebook:User_8 ;
+.
+Facebook:Image_10
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_10_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_11
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_11-cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_11_group_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_12
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_13
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_14
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_15
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_16
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_17
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_18
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_19
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_1_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_1_group_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_1_page
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_1_page_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_2
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_20
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_21
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_22
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_23
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_24
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_25
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_26_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_27_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_28
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_28_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_29_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_2_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_2_group_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_2_page
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_3
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_3_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_3_group_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_3_page
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_3_page_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_4
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_4_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_5
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_5_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_5_page
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_6
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_6_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_6_page
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_7
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_7_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_8
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_8_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_8_page
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_9
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_9_cover
+  rdf:type Facebook:Image ;
+.
+Facebook:Image_9_page
+  rdf:type Facebook:Image ;
+.
+Facebook:Interchange
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Product ;
+  rdfs:range Facebook:Seller ;
+.
+Facebook:Language
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:User ;
+  rdfs:range xsd:string ;
+.
+Facebook:Laptop
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Electronics ;
+.
+Facebook:Laptop_1
+  rdf:type Facebook:Laptop ;
+.
+Facebook:Last_Name
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:User ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf Facebook:User_Name ;
+.
+Facebook:Last_Name_Pronunciation
+  rdf:type rdf:Property ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf Facebook:Last_Name ;
+.
+Facebook:Likes
+  rdf:type rdf:Property ;
+  rdfs:range Facebook:Entity ;
+.
+Facebook:Location
+  rdf:type rdf:Property ;
+  rdfs:range xsd:string ;
+.
+Facebook:Marketplace
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Facebook:Marketplace_1
+  rdf:type Facebook:Marketplace ;
+.
+Facebook:Marketplace_Product
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Product ;
+  rdfs:range Facebook:Marketplace ;
+.
+Facebook:Media
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Publication ;
+.
+Facebook:Media_Contains_Tag
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Media ;
+  rdfs:subPropertyOf Facebook:Contains_Tag ;
+.
+Facebook:Members
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Group ;
+  rdfs:range Facebook:Entity ;
+.
+Facebook:Name
+  rdf:type rdf:Property ;
+  rdfs:range xsd:string ;
+.
+Facebook:PFP
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Entity ;
+  rdfs:range Facebook:Image ;
+.
+Facebook:Page
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Entity ;
+.
+Facebook:Page_1
+  rdf:type Facebook:Page ;
+  Facebook:Entity_Cover Facebook:Image_1_page_cover ;
+  Facebook:Entity_Location "Greece" ;
+  Facebook:Follow Facebook:Page_2 ;
+  Facebook:Follow Facebook:Page_4 ;
+  Facebook:PFP Facebook:Image_1_page ;
+  Facebook:Page_Admin Facebook:User_1 ;
+  Facebook:Page_Advertiser Facebook:User_1 ;
+  Facebook:Page_Analyst Facebook:User_1 ;
+  Facebook:Page_Creation_Date "2012-09-03"^^xsd:date ;
+  Facebook:Page_Editor Facebook:User_1 ;
+  Facebook:Page_Likes Facebook:Page_1 ;
+  Facebook:Page_Likes Facebook:Page_2 ;
+  Facebook:Page_Likes Facebook:Page_4 ;
+  Facebook:Page_Likes Facebook:Page_9 ;
+  Facebook:Page_Moderator Facebook:User_1 ;
+  Facebook:Page_Name "Cute kitties" ;
+.
+Facebook:Page_2
+  rdf:type Facebook:Page ;
+  Facebook:Entity_Cover Facebook:Image_26_cover ;
+  Facebook:Entity_Location "France" ;
+  Facebook:Follow Facebook:Page_1 ;
+  Facebook:Follow Facebook:Page_5 ;
+  Facebook:Follow Facebook:Page_6 ;
+  Facebook:Follow Facebook:User_2 ;
+  Facebook:PFP Facebook:Image_2_page ;
+  Facebook:Page_Admin Facebook:User_2 ;
+  Facebook:Page_Advertiser Facebook:User_2 ;
+  Facebook:Page_Analyst Facebook:User_2 ;
+  Facebook:Page_Creation_Date "2022-11-25"^^xsd:date ;
+  Facebook:Page_Editor Facebook:User_2 ;
+  Facebook:Page_Likes Facebook:Page_1 ;
+  Facebook:Page_Likes Facebook:Page_8 ;
+  Facebook:Page_Likes Facebook:User_1 ;
+  Facebook:Page_Likes Facebook:User_2 ;
+  Facebook:Page_Moderator Facebook:User_2 ;
+  Facebook:Page_Name "Melangez des animaux" ;
+.
+Facebook:Page_3
+  rdf:type Facebook:Page ;
+  Facebook:Entity_Cover Facebook:Image_3_page_cover ;
+  Facebook:Entity_Location "Germany" ;
+  Facebook:Follow Facebook:User_3 ;
+  Facebook:PFP Facebook:Image_3_page ;
+  Facebook:Page_Admin Facebook:User_3 ;
+  Facebook:Page_Advertiser Facebook:User_3 ;
+  Facebook:Page_Analyst Facebook:User_2 ;
+  Facebook:Page_Creation_Date "2022-11-25"^^xsd:date ;
+  Facebook:Page_Editor Facebook:User_3 ;
+  Facebook:Page_Likes Facebook:Page_5 ;
+  Facebook:Page_Likes Facebook:Page_6 ;
+  Facebook:Page_Likes Facebook:Page_8 ;
+  Facebook:Page_Likes Facebook:User_2 ;
+  Facebook:Page_Likes Facebook:User_4 ;
+  Facebook:Page_Likes Facebook:User_6 ;
+  Facebook:Page_Likes Facebook:User_7 ;
+  Facebook:Page_Likes Facebook:User_8 ;
+  Facebook:Page_Moderator Facebook:User_3 ;
+  Facebook:Page_Name "Schalke uber alles " ;
+.
+Facebook:Page_4
+  rdf:type Facebook:Page ;
+  Facebook:Entity_Cover Facebook:Image_28_cover ;
+  Facebook:Entity_Location "Mexico" ;
+  Facebook:PFP Facebook:Image_28 ;
+  Facebook:Page_Admin Facebook:User_6 ;
+  Facebook:Page_Analyst Facebook:Page_8 ;
+  Facebook:Page_Creation_Date "2019-08-01"^^xsd:date ;
+  Facebook:Page_Editor Facebook:User_2 ;
+  Facebook:Page_Likes Facebook:User_1 ;
+  Facebook:Page_Likes Facebook:User_10 ;
+  Facebook:Page_Likes Facebook:User_11 ;
+  Facebook:Page_Likes Facebook:User_2 ;
+  Facebook:Page_Likes Facebook:User_3 ;
+  Facebook:Page_Likes Facebook:User_4 ;
+  Facebook:Page_Likes Facebook:User_5 ;
+  Facebook:Page_Likes Facebook:User_6 ;
+  Facebook:Page_Likes Facebook:User_7 ;
+  Facebook:Page_Likes Facebook:User_8 ;
+  Facebook:Page_Likes Facebook:User_9 ;
+  Facebook:Page_Name "Migeulito Akerfeldt Posting" ;
+.
+Facebook:Page_5
+  rdf:type Facebook:Page ;
+  Facebook:Entity_Cover Facebook:Image_27_cover ;
+  Facebook:Entity_Location "Indonesia" ;
+  Facebook:Follow Facebook:Page_6 ;
+  Facebook:Follow Facebook:User_6 ;
+  Facebook:PFP Facebook:Image_5_page ;
+  Facebook:Page_Admin Facebook:User_5 ;
+  Facebook:Page_Admin Facebook:User_6 ;
+  Facebook:Page_Advertiser Facebook:User_5 ;
+  Facebook:Page_Advertiser Facebook:User_6 ;
+  Facebook:Page_Analyst Facebook:User_2 ;
+  Facebook:Page_Creation_Date "2020-05-01"^^xsd:date ;
+  Facebook:Page_Editor Facebook:User_5 ;
+  Facebook:Page_Editor Facebook:User_6 ;
+  Facebook:Page_Likes Facebook:User_10 ;
+  Facebook:Page_Likes Facebook:User_2 ;
+  Facebook:Page_Likes Facebook:User_3 ;
+  Facebook:Page_Likes Facebook:User_4 ;
+  Facebook:Page_Likes Facebook:User_5 ;
+  Facebook:Page_Likes Facebook:User_7 ;
+  Facebook:Page_Likes Facebook:User_8 ;
+  Facebook:Page_Moderator Facebook:User_5 ;
+  Facebook:Page_Name "Legend of Majumaru Indo Community" ;
+.
+Facebook:Page_6
+  rdf:type Facebook:Page ;
+  Facebook:Entity_Cover Facebook:Image_29_cover ;
+  Facebook:Entity_Location "France" ;
+  Facebook:Follow Facebook:Page_5 ;
+  Facebook:Follow Facebook:User_3 ;
+  Facebook:Follow Facebook:User_5 ;
+  Facebook:Follow Facebook:User_6 ;
+  Facebook:PFP Facebook:Image_6_page ;
+  Facebook:Page_Admin Facebook:User_5 ;
+  Facebook:Page_Admin Facebook:User_6 ;
+  Facebook:Page_Advertiser Facebook:User_5 ;
+  Facebook:Page_Advertiser Facebook:User_6 ;
+  Facebook:Page_Analyst Facebook:User_1 ;
+  Facebook:Page_Creation_Date "2021-09-30"^^xsd:date ;
+  Facebook:Page_Editor Facebook:User_6 ;
+  Facebook:Page_Likes Facebook:Page_4 ;
+  Facebook:Page_Likes Facebook:Page_5 ;
+  Facebook:Page_Likes Facebook:Page_9 ;
+  Facebook:Page_Likes Facebook:User_2 ;
+  Facebook:Page_Likes Facebook:User_5 ;
+  Facebook:Page_Likes Facebook:User_6 ;
+  Facebook:Page_Likes Facebook:User_8 ;
+  Facebook:Page_Moderator Facebook:User_6 ;
+  Facebook:Page_Name "Movies" ;
+.
+Facebook:Page_8
+  rdf:type Facebook:Page ;
+  Facebook:Follow Facebook:Page_9 ;
+  Facebook:Follow Facebook:User_8 ;
+  Facebook:PFP Facebook:Image_8_page ;
+  Facebook:Page_Admin Facebook:User_8 ;
+  Facebook:Page_Advertiser Facebook:User_8 ;
+  Facebook:Page_Analyst Facebook:User_8 ;
+  Facebook:Page_Creation_Date "2019-12-03"^^xsd:date ;
+  Facebook:Page_Editor Facebook:User_8 ;
+  Facebook:Page_Likes Facebook:Page_9 ;
+  Facebook:Page_Moderator Facebook:User_8 ;
+.
+Facebook:Page_9
+  rdf:type Facebook:Page ;
+  Facebook:Follow Facebook:User_1 ;
+  Facebook:Follow Facebook:User_10 ;
+  Facebook:Follow Facebook:User_11 ;
+  Facebook:Follow Facebook:User_4 ;
+  Facebook:Follow Facebook:User_8 ;
+  Facebook:PFP Facebook:Image_9_page ;
+  Facebook:Page_Admin Facebook:User_9 ;
+  Facebook:Page_Advertiser Facebook:User_10 ;
+  Facebook:Page_Advertiser Facebook:User_8 ;
+  Facebook:Page_Advertiser Facebook:User_9 ;
+  Facebook:Page_Analyst Facebook:User_9 ;
+  Facebook:Page_Creation_Date "2022-11-25"^^xsd:date ;
+  Facebook:Page_Editor Facebook:User_8 ;
+  Facebook:Page_Likes Facebook:User_9 ;
+  Facebook:Page_Moderator Facebook:User_9 ;
+.
+Facebook:Page_Admin
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf Facebook:Page_Role ;
+.
+Facebook:Page_Advertiser
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf Facebook:Page_Role ;
+.
+Facebook:Page_Analyst
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf Facebook:Page_Role ;
+.
+Facebook:Page_Creation_Date
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Page ;
+  rdfs:subPropertyOf Facebook:Creation_Date ;
+.
+Facebook:Page_Editor
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf Facebook:Page_Role ;
+.
+Facebook:Page_Likes
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Page ;
+  rdfs:subPropertyOf Facebook:Likes ;
+.
+Facebook:Page_Moderator
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf Facebook:Page_Role ;
+.
+Facebook:Page_Name
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Page ;
+  rdfs:subPropertyOf Facebook:Name ;
+.
+Facebook:Page_Role
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Page ;
+  rdfs:range Facebook:Entity ;
+  rdfs:subPropertyOf Facebook:Roles ;
+.
+Facebook:Phone
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Electronics ;
+.
+Facebook:Phone_1
+  rdf:type Facebook:Phone ;
+.
+Facebook:Post
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Publication ;
+.
+Facebook:Post_1
+  rdf:type Facebook:Post ;
+.
+Facebook:Post_Contains_Tag
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Post ;
+  rdfs:subPropertyOf Facebook:Contains_Tag ;
+.
+Facebook:Price
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Product ;
+  rdfs:range xsd:decimal ;
+.
+Facebook:Private
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Visibility ;
+.
+Facebook:Private_1
+  rdf:type Facebook:Private ;
+.
+Facebook:Product
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Facebook:Product_1
+  rdf:type Facebook:Product ;
+  Facebook:Interchange Facebook:Seller_1 ;
+  Facebook:Marketplace_Product Facebook:Marketplace_1 ;
+  Facebook:Price 8.5 ;
+  Facebook:Product_Category Facebook:Dress_1 ;
+  Facebook:Product_Creation_Date "2022-11-25"^^xsd:date ;
+  Facebook:Product_Description "Forema se S apo to Bershka to pulao logo lauos megeuous" ;
+  Facebook:Product_Images Facebook:Image_12 ;
+  Facebook:Product_Images Facebook:Image_13 ;
+  Facebook:Product_Images Facebook:Image_14 ;
+  Facebook:Product_Name "Bershka Forema" ;
+.
+Facebook:Product_2
+  rdf:type Facebook:Product ;
+  Facebook:Interchange Facebook:Seller_1 ;
+  Facebook:Marketplace_Product Facebook:Marketplace_1 ;
+  Facebook:Price "300"^^xsd:decimal ;
+  Facebook:Product_Category Facebook:Hoodies_1 ;
+  Facebook:Product_Creation_Date "2022-11-23"^^xsd:date ;
+  Facebook:Product_Images Facebook:Image_20 ;
+  Facebook:Product_Name "Gucci Some Hoodie" ;
+.
+Facebook:Product_3
+  rdf:type Facebook:Product ;
+  Facebook:Interchange Facebook:Seller_1 ;
+  Facebook:Marketplace_Product Facebook:Marketplace_1 ;
+  Facebook:Price "150"^^xsd:decimal ;
+  Facebook:Product_Category Facebook:Smartwatch_1 ;
+  Facebook:Product_Creation_Date "2022-11-21"^^xsd:date ;
+  Facebook:Product_Images Facebook:Image_21 ;
+  Facebook:Product_Images Facebook:Image_22 ;
+  Facebook:Product_Name "Apple smartwatch 1" ;
+.
+Facebook:Product_4
+  rdf:type Facebook:Product ;
+  Facebook:Interchange Facebook:Seller_2 ;
+  Facebook:Marketplace_Product Facebook:Marketplace_1 ;
+  Facebook:Price "190"^^xsd:decimal ;
+  Facebook:Product_Category Facebook:Phone_1 ;
+  Facebook:Product_Creation_Date "2022-10-25"^^xsd:date ;
+  Facebook:Product_Description "Iphone 12 Pro Max ICLOUD LOCKED dinete mono se atoma pu jerun apo LOCKED iphone. Den ine klemeno !11!!1" ;
+  Facebook:Product_Images Facebook:Image_23 ;
+  Facebook:Product_Name "Iphone 12 Pro Max ICLOUD LOCKED" ;
+.
+Facebook:Product_5
+  rdf:type Facebook:Product ;
+  Facebook:Interchange Facebook:Seller_3 ;
+  Facebook:Marketplace_Product Facebook:Marketplace_1 ;
+  Facebook:Price "102"^^xsd:decimal ;
+  Facebook:Product_Category Facebook:Shoes_1 ;
+  Facebook:Product_Creation_Date "2022-09-05"^^xsd:date ;
+  Facebook:Product_Description "MOON BOOT botakia ta dino epidi telika espasa ta podia mu ke den ua mporeso na pao gia ski fetos. Ine aforeta. Numero 38 ginekio alla pistevo kanun ke se andres mehri numero 39." ;
+  Facebook:Product_Images Facebook:Image_24 ;
+  Facebook:Product_Name "MOON BOOT 256FGB15" ;
+.
+Facebook:Product_6
+  rdf:type Facebook:Product ;
+  Facebook:Interchange Facebook:Seller_3 ;
+  Facebook:Marketplace_Product Facebook:Marketplace_1 ;
+  Facebook:Price "1"^^xsd:decimal ;
+  Facebook:Product_Category Facebook:Dress_1 ;
+  Facebook:Product_Description "JEPULAME LOGO SINTAJIODOTISIS stilte mas minima na dite ta ipolipa kommatia tis viotehnias mas pu klini se poli prosites times! Vintage kommatia!" ;
+  Facebook:Product_Images Facebook:Image_15 ;
+  Facebook:Product_Images Facebook:Image_16 ;
+  Facebook:Product_Images Facebook:Image_17 ;
+  Facebook:Product_Images Facebook:Image_18 ;
+  Facebook:Product_Images Facebook:Image_19 ;
+  Facebook:Product_Name "FOREMATA" ;
+.
+Facebook:Product_7
+  rdf:type Facebook:Product ;
+  Facebook:Interchange Facebook:Seller_3 ;
+  Facebook:Marketplace_Product Facebook:Marketplace_1 ;
+  Facebook:Price "1500"^^xsd:decimal ;
+  Facebook:Product_Category Facebook:Laptop_1 ;
+  Facebook:Product_Creation_Date "2022-11-25"^^xsd:date ;
+  Facebook:Product_Description "o logos pu to dino ine epidi den boro na hrisimopiiso mac ke uelo na valo windows. Dio fores to anija ine auikto. Ohi pazaria." ;
+  Facebook:Product_Images Facebook:Image_25 ;
+  Facebook:Product_Name "Macbook Air 13.3' M1 16GB SSD 256GB" ;
+.
+Facebook:Product_Category
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Product ;
+  rdfs:range Facebook:Category ;
+.
+Facebook:Product_Creation_Date
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Product ;
+  rdfs:subPropertyOf Facebook:Creation_Date ;
+.
+Facebook:Product_Description
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Product ;
+  rdfs:subPropertyOf Facebook:Body ;
+.
+Facebook:Product_Images
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Product ;
+  rdfs:range Facebook:Image ;
+.
+Facebook:Product_Name
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Product ;
+  rdfs:subPropertyOf Facebook:Name ;
+.
+Facebook:Pronoun
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:User ;
+  rdfs:range xsd:string ;
+.
+Facebook:Public
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Visibility ;
+.
+Facebook:Public_1
+  rdf:type Facebook:Public ;
+.
+Facebook:Publication
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Facebook:Publication_1
+  rdf:type Facebook:Publication ;
+.
+Facebook:Publication_Body
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Publication ;
+  rdfs:subPropertyOf Facebook:Body ;
+.
+Facebook:Publication_Created_By
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Publication ;
+  rdfs:subPropertyOf Facebook:Created_by ;
+.
+Facebook:Publication_Likes
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Publication ;
+  rdfs:subPropertyOf Facebook:Likes ;
+.
+Facebook:Publication_Location
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf Facebook:Location ;
+.
+Facebook:Reply
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Comment ;
+  rdfs:range Facebook:Comment ;
+.
+Facebook:Review
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Publication ;
+.
+Facebook:Review_1
+  rdf:type Facebook:Review ;
+.
+Facebook:Reviews
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Review ;
+.
+Facebook:Reviews_Page
+  rdf:type rdf:Property ;
+  rdfs:range Facebook:Page ;
+  rdfs:subPropertyOf Facebook:Reviews ;
+.
+Facebook:Reviews_Seller
+  rdf:type rdf:Property ;
+  rdfs:range Facebook:Seller ;
+  rdfs:subPropertyOf Facebook:Reviews ;
+.
+Facebook:Roles
+  rdf:type rdf:Property ;
+.
+Facebook:Seller
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Facebook:Seller_1
+  rdf:type Facebook:Seller ;
+  Facebook:isEntity Facebook:User_1 ;
+.
+Facebook:Seller_2
+  rdf:type Facebook:Seller ;
+  Facebook:isEntity Facebook:Page_3 ;
+.
+Facebook:Seller_3
+  rdf:type Facebook:Seller ;
+  Facebook:isEntity Facebook:User_7 ;
+.
+Facebook:Shoes
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Clothing ;
+.
+Facebook:Shoes_1
+  rdf:type Facebook:Shoes ;
+.
+Facebook:Smartwatch
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Electronics ;
+.
+Facebook:Smartwatch_1
+  rdf:type Facebook:Smartwatch ;
+.
+Facebook:Tag
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Facebook:Tag_1
+  rdf:type Facebook:Tag ;
+  Facebook:Tag_By_Entity Facebook:User_2 ;
+  Facebook:Tagging Facebook:User_1 ;
+.
+Facebook:Tag_By_Entity
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Tag ;
+  rdfs:range Facebook:Entity ;
+.
+Facebook:Tagging
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Tag ;
+  rdfs:range Facebook:Entity ;
+.
+Facebook:User
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Entity ;
+.
+Facebook:User_1
+  rdf:type Facebook:User ;
+  Facebook:Birth_Date "2001-11-25"^^xsd:date ;
+  Facebook:Entity_Cover Facebook:Image_1_cover ;
+  Facebook:Entity_Location "Serres, Greece" ;
+  Facebook:First_Name "Eleni" ;
+  Facebook:First_Name_Pronunciation "e [eh] le [lay] ni [nee]" ;
+  Facebook:Follow Facebook:Page_1 ;
+  Facebook:Follow Facebook:Page_2 ;
+  Facebook:Follow Facebook:User_1 ;
+  Facebook:Follow Facebook:User_2 ;
+  Facebook:Friend Facebook:User_2 ;
+  Facebook:Friend Facebook:User_3 ;
+  Facebook:Friend Facebook:User_5 ;
+  Facebook:Friend Facebook:User_6 ;
+  Facebook:Friend Facebook:User_7 ;
+  Facebook:Friend Facebook:User_8 ;
+  Facebook:Friend Facebook:User_9 ;
+  Facebook:Language "English" ;
+  Facebook:Language "Greek" ;
+  Facebook:Language "Norsk" ;
+  Facebook:Last_Name "Mnd" ;
+  Facebook:Last_Name_Pronunciation "[eem en dee]" ;
+  Facebook:PFP Facebook:Image_1 ;
+  Facebook:Pronoun "she/her" ;
+  Facebook:User_Created_Page Facebook:Page_1 ;
+.
+Facebook:User_10
+  rdf:type Facebook:User ;
+  Facebook:Entity_Cover Facebook:Image_10_cover ;
+  Facebook:First_Name "Petros" ;
+  Facebook:Follow Facebook:Page_9 ;
+  Facebook:Friend Facebook:User_10 ;
+  Facebook:Friend Facebook:User_6 ;
+  Facebook:Friend Facebook:User_8 ;
+  Facebook:Friend Facebook:User_9 ;
+  Facebook:Language "french" ;
+  Facebook:Last_Name "Papadopoulos" ;
+  Facebook:PFP Facebook:Image_10 ;
+  Facebook:Pronoun "she" ;
+.
+Facebook:User_11
+  rdf:type Facebook:User ;
+  Facebook:Entity_Cover Facebook:Image_11-cover ;
+  Facebook:First_Name "Mitsos" ;
+  Facebook:Follow Facebook:Page_4 ;
+  Facebook:Follow Facebook:Page_8 ;
+  Facebook:Follow Facebook:Page_9 ;
+  Facebook:Friend Facebook:User_1 ;
+  Facebook:Friend Facebook:User_10 ;
+  Facebook:Friend Facebook:User_11 ;
+  Facebook:Friend Facebook:User_2 ;
+  Facebook:Friend Facebook:User_3 ;
+  Facebook:Friend Facebook:User_4 ;
+  Facebook:Friend Facebook:User_5 ;
+  Facebook:Friend Facebook:User_6 ;
+  Facebook:Friend Facebook:User_7 ;
+  Facebook:Friend Facebook:User_8 ;
+  Facebook:Friend Facebook:User_9 ;
+  Facebook:Language "english" ;
+  Facebook:Last_Name "Mitsaras" ;
+  Facebook:PFP Facebook:Image_11 ;
+  Facebook:User_Created_Page Facebook:Page_4 ;
+.
+Facebook:User_2
+  rdf:type Facebook:User ;
+  Facebook:Entity_Cover Facebook:Image_2_cover ;
+  Facebook:First_Name "Erofili" ;
+  Facebook:Follow Facebook:Page_1 ;
+  Facebook:Follow Facebook:Page_2 ;
+  Facebook:Follow Facebook:Page_5 ;
+  Facebook:Follow Facebook:Page_6 ;
+  Facebook:Friend Facebook:User_1 ;
+  Facebook:Friend Facebook:User_2 ;
+  Facebook:Friend Facebook:User_5 ;
+  Facebook:Friend Facebook:User_6 ;
+  Facebook:Language "English" ;
+  Facebook:Language "German" ;
+  Facebook:Language "Spanish" ;
+  Facebook:Language "greek" ;
+  Facebook:Last_Name "Konsta" ;
+  Facebook:PFP Facebook:Image_2 ;
+  Facebook:Page_Admin Facebook:Page_2 ;
+  Facebook:Pronoun "she" ;
+  Facebook:User_Created_Page Facebook:Page_2 ;
+.
+Facebook:User_3
+  rdf:type Facebook:User ;
+  Facebook:Entity_Cover Facebook:Image_3_cover ;
+  Facebook:First_Name "Kostas" ;
+  Facebook:Follow Facebook:Page_1 ;
+  Facebook:Follow Facebook:Page_2 ;
+  Facebook:Follow Facebook:Page_3 ;
+  Facebook:Friend Facebook:User_1 ;
+  Facebook:Friend Facebook:User_2 ;
+  Facebook:Friend Facebook:User_4 ;
+  Facebook:Language "Greek" ;
+  Facebook:Language "english" ;
+  Facebook:Last_Name "Giotas" ;
+  Facebook:PFP Facebook:Image_3 ;
+  Facebook:Pronoun "They" ;
+  Facebook:User_Created_Page Facebook:Page_3 ;
+.
+Facebook:User_4
+  rdf:type Facebook:User ;
+  Facebook:Entity_Cover Facebook:Image_4_cover ;
+  Facebook:First_Name "Konstantina" ;
+  Facebook:Follow Facebook:Page_1 ;
+  Facebook:Follow Facebook:Page_3 ;
+  Facebook:Follow Facebook:User_5 ;
+  Facebook:Follow Facebook:User_6 ;
+  Facebook:Friend Facebook:User_1 ;
+  Facebook:Friend Facebook:User_2 ;
+  Facebook:Friend Facebook:User_5 ;
+  Facebook:Friend Facebook:User_6 ;
+  Facebook:Language "German" ;
+  Facebook:Last_Name "Tsi" ;
+  Facebook:PFP Facebook:Image_4 ;
+.
+Facebook:User_5
+  rdf:type Facebook:User ;
+  Facebook:Entity_Cover Facebook:Image_5_cover ;
+  Facebook:First_Name "Giorgos" ;
+  Facebook:Follow Facebook:Page_2 ;
+  Facebook:Follow Facebook:Page_5 ;
+  Facebook:Follow Facebook:User_6 ;
+  Facebook:Friend Facebook:User_2 ;
+  Facebook:Friend Facebook:User_6 ;
+  Facebook:Last_Name "Blake" ;
+  Facebook:Last_Name_Pronunciation "/Bleik/" ;
+  Facebook:PFP Facebook:Image_5 ;
+  Facebook:Pronoun "HE" ;
+  Facebook:User_Created_Page Facebook:Page_5 ;
+.
+Facebook:User_6
+  rdf:type Facebook:User ;
+  Facebook:Entity_Cover Facebook:Image_6_cover ;
+  Facebook:First_Name "Dimitris" ;
+  Facebook:Follow Facebook:Page_1 ;
+  Facebook:Follow Facebook:Page_2 ;
+  Facebook:Follow Facebook:Page_5 ;
+  Facebook:Follow Facebook:Page_6 ;
+  Facebook:Follow Facebook:User_2 ;
+  Facebook:Follow Facebook:User_5 ;
+  Facebook:Friend Facebook:User_1 ;
+  Facebook:Friend Facebook:User_2 ;
+  Facebook:Friend Facebook:User_3 ;
+  Facebook:Friend Facebook:User_4 ;
+  Facebook:Friend Facebook:User_5 ;
+  Facebook:Friend Facebook:User_7 ;
+  Facebook:Last_Name "Papakostantinou" ;
+  Facebook:PFP Facebook:Image_6 ;
+  Facebook:User_Created_Page Facebook:Page_6 ;
+.
+Facebook:User_7
+  rdf:type Facebook:User ;
+  Facebook:Entity_Cover Facebook:Image_7_cover ;
+  Facebook:First_Name "Maria" ;
+  Facebook:Follow Facebook:Page_2 ;
+  Facebook:Follow Facebook:Page_5 ;
+  Facebook:Follow Facebook:Page_6 ;
+  Facebook:Friend Facebook:User_1 ;
+  Facebook:Friend Facebook:User_5 ;
+  Facebook:Friend Facebook:User_6 ;
+  Facebook:Last_Name "Mandana" ;
+  Facebook:PFP Facebook:Image_7 ;
+.
+Facebook:User_8
+  rdf:type Facebook:User ;
+  Facebook:Entity_Cover Facebook:Image_8_cover ;
+  Facebook:First_Name "Ilias" ;
+  Facebook:Follow Facebook:Page_2 ;
+  Facebook:Follow Facebook:Page_8 ;
+  Facebook:Friend Facebook:User_10 ;
+  Facebook:Friend Facebook:User_11 ;
+  Facebook:Friend Facebook:User_9 ;
+  Facebook:Language "english" ;
+  Facebook:Language "german" ;
+  Facebook:Last_Name "Konstas" ;
+  Facebook:PFP Facebook:Image_8 ;
+  Facebook:User_Created_Page Facebook:Page_8 ;
+.
+Facebook:User_9
+  rdf:type Facebook:User ;
+  Facebook:Entity_Cover Facebook:Image_9_cover ;
+  Facebook:First_Name "Nikos" ;
+  Facebook:Follow Facebook:Page_1 ;
+  Facebook:Follow Facebook:Page_2 ;
+  Facebook:Follow Facebook:User_8 ;
+  Facebook:Friend Facebook:User_1 ;
+  Facebook:Friend Facebook:User_2 ;
+  Facebook:Friend Facebook:User_5 ;
+  Facebook:Friend Facebook:User_8 ;
+  Facebook:Friend Facebook:User_9 ;
+  Facebook:Language "english" ;
+  Facebook:Last_Name "Mandanas" ;
+  Facebook:PFP Facebook:Image_9 ;
+  Facebook:User_Created_Page Facebook:Page_9 ;
+.
+Facebook:User_Created_Page
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:User ;
+  rdfs:range Facebook:Page ;
+  rdfs:subPropertyOf Facebook:Created_by ;
+.
+Facebook:User_Name
+  rdf:type rdf:Property ;
+  rdfs:range xsd:string ;
+.
+Facebook:Video
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf Facebook:Media ;
+.
+Facebook:Video_1
+  rdf:type Facebook:Video ;
+.
+Facebook:Visibility
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Facebook:Visible
+  rdf:type rdf:Property ;
+  rdfs:range Facebook:Visibility ;
+.
+Facebook:isEntity
+  rdf:type rdf:Property ;
+  rdfs:domain Facebook:Seller ;
+  rdfs:range Facebook:Entity ;
+.
